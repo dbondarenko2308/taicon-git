@@ -62,6 +62,10 @@ button:focus {
   outline: none;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Exo 2';
   font-weight: 400;
