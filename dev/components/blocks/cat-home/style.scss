@@ -44,8 +44,16 @@
       background: $core-black;
 
       .cat-home__systems {
-        span {
+        a {
           background: $mid-blue;
+
+          &:hover {
+            background: $demin-blue;
+          }
+
+          &:active {
+            background: $mid-blue;
+          }
         }
       }
 
@@ -103,7 +111,7 @@
       width: 100%;
     }
 
-    span {
+    a {
       display: block;
       padding: 14px 30px;
       border-radius: 16px;
@@ -112,6 +120,15 @@
       display: block;
       background: $calm-sky;
       height: fit-content;
+
+      &:hover {
+        background: $blue;
+        color: #fff;
+      }
+
+      &:active {
+        background: $demin-blue;
+      }
 
       @media only screen and (max-width: 767px) {
         width: 100%;
@@ -141,7 +158,6 @@
 
   &__btn {
     width: 180px;
-
 
     @media only screen and (max-width: 767px) {
       width: 100%;

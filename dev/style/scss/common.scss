@@ -853,6 +853,10 @@ textarea {
 }
 
 
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: $blue;
+}
+
 @media only screen and (max-width: 991px) {
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     font-size: 13px;
