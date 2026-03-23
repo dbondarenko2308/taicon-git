@@ -1,0 +1,150 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.cat-home {
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    height: 376px;
+
+    @media only screen and (max-width: 991px) {
+      height: auto;
+      min-height: 179px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__item {
+    background: $light-blue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+
+    &.black {
+      color: #fff;
+      background: $core-black;
+
+      .cat-home__systems {
+        span {
+          background: $mid-blue;
+        }
+      }
+
+      .cat-home__btn {
+        background: #fff;
+        color: $core-black;
+
+        &:hover {
+          background: $blue;
+
+          color: #fff;
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+
+        &:active {
+          background: $demin-blue;
+        }
+
+        svg {
+          path {
+            fill: $core-black;
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 10;
+
+    @media only screen and (max-width: 767px) {
+      padding: 20px;
+    }
+  }
+
+  &__systems {
+    flex-grow: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 767px) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    span {
+      display: block;
+      padding: 14px 30px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      display: block;
+      background: $calm-sky;
+      height: fit-content;
+
+      @media only screen and (max-width: 767px) {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    @media only screen and (max-width: 767px) {
+      height: 47px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    width: 180px;
+
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}
