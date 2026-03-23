@@ -341,7 +341,6 @@
         }
       }
 
-
       &:hover {
         svg {
           path {
@@ -647,25 +646,67 @@
       }
     }
 
-    &__select--head {
-      display: flex;
-      align-items: center;
-      border-radius: 10px;
-      padding: 5px 20px;
+    &__select {
+      form {
+        position: relative;
+        margin-bottom: 30px;
 
-      border: 1px solid $core-black;
-      height: 50px;
-      justify-content: space-between;
+        input {
+          position: relative;
+          width: 100%;
+          height: 50px;
+          font-family: inherit;
+          border: 1px solid $calm-sky;
+          padding: 0 30px;
+          border-radius: 10px;
+          font-size: 15px;
 
-      cursor: pointer;
+          @media only screen and (max-width: 767px) {
+            padding-left: 20px;
+            font-size: 13px;
+            height: 46px;
+          }
 
-      svg {
-        transform: rotate(180deg);
-        transition: 300ms;
-        &.open {
-          transform: rotate(0);
+          &:focus {
+            border: 1px solid $core-black;
+          }
+
+          &::-webkit-input-placeholder {
+            color: $blue;
+          }
+          &:-moz-placeholder {
+            color: $blue;
+          }
+          &::-moz-placeholder {
+            color: $blue;
+          }
+          &:-ms-input-placeholder {
+            color: $blue;
+          }
         }
       }
+    }
+
+    &__loop {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      transform: translateY(-50%);
+    }
+
+    &__remove {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      transform: translateY(-50%);
+
+
+      z-index: 1;
+      cursor: pointer;
     }
 
     &__select {
@@ -677,20 +718,12 @@
     }
 
     &__select--body {
-      border-radius: 10px;
-      border: 1px solid $calm-sky;
-      padding: 20px;
-      display: none;
       top: 10px;
       position: relative;
-
-      &.active {
-        display: block;
-      }
     }
 
     &__select--items {
-      height: 180px;
+      height: 200px;
       overflow: auto;
 
       &::-webkit-scrollbar {

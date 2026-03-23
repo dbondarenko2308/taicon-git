@@ -283,4 +283,50 @@ $(document).ready(function() {
 			header.removeClass('fixed')
 		}
 	})
+
+	const $inputCity = $('.header-country__select input')
+	const $itemsCity = $('.header-country__select--items span')
+	const $container = $('.header-country__select--items')
+	const $loop = $('.header-country__loop')
+	const $removeCity = $('.header-country__remove') // ← исправил
+
+	let $empty = $('<div class="no-results">Не найдено вариантов</div>')
+	$empty.hide()
+	$container.append($empty)
+
+	$removeCity.hide()
+
+	$inputCity.on('input', function() {
+		let val = $(this).val().toLowerCase().trim()
+		let found = false
+
+		if (val.length > 0) {
+			$loop.hide()
+			$removeCity.show()
+		} else {
+			$loop.show()
+			$removeCity.hide()
+		}
+
+		$itemsCity.each(function() {
+			let text = $(this).text().toLowerCase()
+
+			if (text.includes(val)) {
+				$(this).show()
+				found = true
+			} else {
+				$(this).hide()
+			}
+		})
+
+		if (!found && val.length) {
+			$empty.show()
+		} else {
+			$empty.hide()
+		}
+	})
+
+	$removeCity.on('click', function() {
+		$inputCity.val('').trigger('input').focus()
+	})
 })

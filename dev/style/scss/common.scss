@@ -239,8 +239,8 @@ ul {
   display: block;
   content: '';
   position: absolute;
-  width: 19px;
-  height: 16px;
+  width: 16px;
+  height: 13px;
   border-radius: 50%;
   background: url('/images/checked.svg');
   background-repeat: no-repeat;
@@ -862,7 +862,6 @@ textarea {
     font-size: 13px;
   }
 }
-
 
 
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
