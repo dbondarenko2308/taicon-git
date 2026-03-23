@@ -54,8 +54,6 @@ $(document).ready(function() {
 
 	$('.header__catalog').on('click', function() {
 		$('.header-catalog').toggleClass('active')
-
-
 	})
 
 	$('.header-catalog__close').on('click', function() {
@@ -170,6 +168,9 @@ $(document).ready(function() {
 	const aboutNews = new Swiper('.showcase__container', {
 		slidesPerView: 1,
 		spaceBetween: 20,
+		autoplay: {
+			delay: 3000
+		},
 
 		navigation: {
 			prevEl: '.showcase__prev',
@@ -275,7 +276,7 @@ $(document).ready(function() {
 	})
 
 	$(window).on('scroll', function() {
-		var header = $('header') 
+		var header = $('header')
 
 		if ($(this).scrollTop() > 0) {
 			header.addClass('fixed')

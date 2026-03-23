@@ -38,6 +38,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 20px;
+    overflow: hidden;
 
     &.black {
       color: #fff;
@@ -120,6 +121,7 @@
       display: block;
       background: $calm-sky;
       height: fit-content;
+      text-transform: uppercase;
 
       &:hover {
         background: $blue;
@@ -161,6 +163,8 @@
 
     @media only screen and (max-width: 767px) {
       width: 100%;
+      justify-content: space-between;
+      padding: 0 20px;
     }
   }
 }

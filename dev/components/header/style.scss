@@ -9,7 +9,6 @@
   z-index: 11;
   background: #fff;
 
-
   @media only screen and (max-width: 991px) {
     margin-bottom: 20px;
   }
@@ -169,6 +168,14 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+
+    &:hover {
+      background: $blue;
+    }
+
+    &:active {
+      background: $demin-blue;
+    }
   }
 
   &__btn {
@@ -196,6 +203,33 @@
       font-weight: 700;
       text-transform: uppercase;
       cursor: pointer;
+      transition: 300ms;
+
+      svg {
+        path {
+          transition: 300ms;
+        }
+      }
+
+      &:hover {
+        color: $blue;
+
+        svg {
+          path {
+            fill: $blue;
+          }
+        }
+      }
+
+      &:active {
+        color: $demin-blue;
+
+        svg {
+          path {
+            fill: $demin-blue;
+          }
+        }
+      }
     }
 
     &--body {
@@ -271,6 +305,10 @@
     font-size: 14px;
     color: $core-black;
     flex-direction: 0;
+
+    &:hover {
+      color: $blue;
+    }
   }
 
   &-catalog {
@@ -296,6 +334,29 @@
       top: 50px;
       right: 50px;
       z-index: 1;
+
+      svg {
+        path {
+          transition: 300ms;
+        }
+      }
+
+
+      &:hover {
+        svg {
+          path {
+            fill: $blue;
+          }
+        }
+      }
+
+      &:active {
+        svg {
+          path {
+            fill: $demin-blue;
+          }
+        }
+      }
     }
 
     &__left {
@@ -570,7 +631,6 @@
         width: calc(100% - 40px);
         border-radius: 20px;
         min-height: 400px;
-      
       }
     }
 
@@ -673,12 +733,9 @@
       padding: 20px 20px 31px;
       overflow: auto;
 
-
       &.active {
         display: block;
       }
-
-      
     }
 
     &__top {
@@ -798,11 +855,7 @@
       top: 50%;
       transform: translateY(-50%);
     }
-
-
-
   }
-
 
   &-mob-search {
     display: none;
@@ -819,14 +872,10 @@
       padding: 20px 20px 31px;
       overflow: auto;
 
-
       &.active {
         display: block;
       }
-
-      
     }
-
 
     .header__search {
       display: block;
