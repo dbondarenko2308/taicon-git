@@ -330,6 +330,11 @@ $(document).ready(function() {
 	$removeCity.on('click', function() {
 		$inputCity.val('').trigger('input').focus()
 	})
+
+
+	$('.cookies__btn').on('click', function() {
+		$('.cookies').hide()
+	})
 })
 
 
