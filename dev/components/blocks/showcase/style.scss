@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    background-size: cover;
     gap: 30px;
 
     @media only screen and (max-width: 991px) {
@@ -36,32 +36,7 @@
       padding: 30px 20px;
     }
 
-    &:first-child {
-      background: url('/images/b1.png') 50% 50% no-repeat;
-      background-size: cover;
-
-      @media only screen and (max-width: 991px) {
-      }
-    }
-
-    &:nth-child(2) {
-      background: url('/images/b2.png') 50% 50% no-repeat;
-      background-size: cover;
-      @media only screen and (max-width: 991px) {
-      }
-    }
-
-    &:nth-child(3) {
-      background: url('/images/b3.png') 50% 50% no-repeat;
-      background-size: cover;
-      @media only screen and (max-width: 991px) {
-      }
-    }
-
     &:nth-child(4) {
-      background: url('/images/b4.png') 50% 50% no-repeat;
-      background-size: cover;
-      color: #fff;
       @media only screen and (max-width: 991px) {
         .showcase__img {
           height: 334px;
@@ -75,8 +50,6 @@
     }
 
     &:nth-child(5) {
-      background: url('/images/b5.png') no-repeat;
-      background-size: cover;
       @media only screen and (max-width: 991px) {
         .showcase__img {
           height: 235px;
