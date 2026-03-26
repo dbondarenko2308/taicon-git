@@ -1,24 +1,52 @@
 @use '../../../style/scss/variables.scss' as *;
 
 .contacts {
+  margin-bottom: 140px;
+
+  @media only screen and (max-width: 991px) {
+    
+    margin-bottom: 80px;
+  }
   &__items {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+
+
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
     border-radius: 20px;
     background: $light-blue;
+    overflow: hidden;
   }
 
   &__img {
     display: flex;
     align-items: center;
+    width: 100%;
+
+    @media only screen and (max-width: 767px) {
+      height: 320px;
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
   &__info {
     padding: 30px;
+
+    @media only screen and (max-width: 991px) {
+      padding: 20px;
+    }
   }
 
   &__name {
@@ -26,6 +54,10 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 30px;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 17px;
+    }
   }
 
   &__list {
@@ -34,6 +66,10 @@
       align-items: center;
       gap: 16px;
       margin-bottom: 20px;
+
+      @media only screen and (max-width: 991px) {
+        font-size: 13px;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -49,5 +85,20 @@
     border-radius: 12px;
     background: $blue;
     justify-content: center;
+  }
+
+
+  &__map {
+    height: 500px;
+    position: relative;
+
+    >div {
+      height: 500px;
+    }
+
+    .ymaps-map {
+      height: 500px !important;
+      display: block;
+    }
   }
 }

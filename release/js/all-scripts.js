@@ -183,18 +183,19 @@ $(document).ready(function() {
 		}
 	})
 
-	$('.field input, .field-area textarea').keyup(function() {
-		const label = $(this).parent().find('.field__label')
-		const span = $(this).parent().find('.field__error')
+	$('.field input, .field textarea').on('input change focus blur', function() {
+		const $field = $(this).parent()
+		const $label = $field.find('.field__label')
+		const $error = $field.find('.field__error')
+
 		if ($(this).val().length > 0) {
-			$(label).addClass('top')
+			$label.addClass('top')
 			$(this).removeClass('error')
-			$(span).hide()
+			$error.hide()
 		} else {
-			$(label).removeClass('top')
+			$label.removeClass('top')
 		}
 	})
-
 	$(document).on('select2:open', () => {
 		$('body').addClass('select-close')
 	})
@@ -331,9 +332,126 @@ $(document).ready(function() {
 		$inputCity.val('').trigger('input').focus()
 	})
 
-
 	$('.cookies__btn').on('click', function() {
 		$('.cookies').hide()
+	})
+
+	$('[data-field="INN"] input').on('input', function() {
+		this.value = this.value.replace(/\D/g, '')
+	})
+
+	$('.file').each(function() {
+		const $file = $(this)
+		const $input = $file.find('.file__input')
+		const $btn = $file.find('.file__btn')
+		const $progress = $file.find('.file__progress')
+		const $bar = $file.find('.file__bar-inner')
+		const $success = $file.find('.file__success')
+		const $error = $file.find('.file__error')
+		const $text = $file.find('.file__text')
+
+		const defaultText = $text.html()
+
+		const maxSize = 5 * 1024 * 1024
+		const allowedExt = ['jpg', 'jpeg', 'png', 'pdf', 'docx', 'xlsx']
+
+		// защита от дублей
+		$input.off('change')
+		$btn.off('click')
+
+		// открыть файл
+		$btn.on('click', function() {
+			$input.trigger('click')
+		})
+
+		// выбор файла
+		$input.on('change', function() {
+			const file = this.files[0]
+			if (!file) return
+
+			reset()
+
+			const ext = file.name.split('.').pop().toLowerCase()
+
+			if (file.size > maxSize) {
+				showError('Файл должен быть не более 5 МБ')
+				return
+			}
+
+			if (!allowedExt.includes(ext)) {
+				showError('Неверный формат файла')
+				return
+			}
+
+			upload(file)
+		})
+
+		function upload(file) {
+			$file.addClass('is-loading')
+			$progress.show()
+			$progress.find('.file__name').text(file.name)
+
+			let percent = 0
+
+			const interval = setInterval(() => {
+				percent += 10
+				$bar.css('width', percent + '%')
+
+				if (percent >= 100) {
+					clearInterval(interval)
+					success(file)
+				}
+			}, 150)
+		}
+
+		function success(file) {
+			$file.removeClass('is-loading').addClass('is-success')
+
+			$progress.hide()
+			$success.show()
+			$success.find('.file__name').text(file.name)
+
+			$btn.text('ЗАМЕНИТЬ')
+
+			// меняем текст
+			$text.html(`
+            Файл загружен:<br>
+            <b>${file.name}</b>
+        `)
+
+			$input.val('')
+		}
+
+		function showError(text) {
+			$file.addClass('is-error')
+			$error.text(text).show()
+
+			// меняем текст
+			$text.html(`
+            <span style="color:red">${text}</span><br>
+            Попробуйте снова
+        `)
+
+			$btn.text('ЗАГРУЗИТЬ')
+		}
+
+		function reset() {
+			$file.removeClass('is-error is-success is-loading')
+			$error.hide().text('')
+			$success.hide()
+			$progress.hide()
+			$bar.css('width', '0%')
+
+			// вернуть дефолт
+			$text.html(defaultText)
+		}
+
+		// удалить файл
+		$file.on('click', '.file__remove', function() {
+			reset()
+			$btn.text('ЗАГРУЗИТЬ')
+			$input.val('')
+		})
 	})
 })
 

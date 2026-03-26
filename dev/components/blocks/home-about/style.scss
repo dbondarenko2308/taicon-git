@@ -4,8 +4,6 @@
   position: relative;
   overflow: hidden;
 
-  
-
   &__map {
     position: absolute;
     right: 0;
@@ -34,7 +32,6 @@
     align-items: flex-start;
 
     @media only screen and (max-width: 1300px) {
-      
       display: none;
     }
   }
@@ -209,6 +206,56 @@
 
     @media only screen and (max-width: 767px) {
       max-width: 100%;
+    }
+  }
+
+  &-brands {
+    .home-about {
+      &__btns {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @media only screen and (max-width: 767px) {
+          flex-direction: column;
+        }
+      }
+
+      &__btn {
+
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+        }
+        &.btn-light {
+          max-width: fit-content;
+
+          @media only screen and (max-width: 767px) {
+            width: 100%;
+            max-width: 100%;
+            justify-content: space-between;
+          }
+        }
+      }
+
+      &__text {
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+
+        @media only screen and (max-width: 767px) {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+      &__grids  {
+        margin-top: 71px;
+
+        @media only screen and (max-width: 767px) {
+          margin-top: 30px;
+        }
+      }
     }
   }
 }

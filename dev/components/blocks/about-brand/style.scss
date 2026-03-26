@@ -1,0 +1,144 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.about-brand {
+  @media only screen and (max-width: 991px) {
+    margin-top: 80px;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: flex-start;
+
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+
+  &__title {
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 991px) {
+      margin-bottom: 30px;
+    }
+  }
+
+
+
+  &__img {
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 991px) {
+      order: -1;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__left {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 138%;
+    text-transform: uppercase;
+    color: $blue;
+    max-width: 346px;
+    margin-bottom: 20px;
+
+
+    @media only screen and (max-width: 767px) {
+      font-size: 17px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  &__items {
+    border-radius: 20px;
+    padding: 30px 30px 40px;
+    background: $light-blue;
+
+    @media only screen and (max-width: 767px) {
+      padding: 20px;
+    }
+  }
+
+  &__desc {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 391px;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 17px;
+    }
+  }
+
+  &__aside {
+    flex-grow: 10;
+  }
+
+
+  &__grids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+    
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+  }
+
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: $blue;
+  }
+
+  &__btn {
+    margin-top: 30px;
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+

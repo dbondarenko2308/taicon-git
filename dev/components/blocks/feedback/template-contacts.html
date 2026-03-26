@@ -1,0 +1,133 @@
+<div class="feedback feedback-contacts">
+  <div class="container">
+    <div class="feedback__inner">
+      <div class="feedback__img">
+        <img src="images/feedback.png" alt="" />
+      </div>
+      <form action="#">
+        <div class="form-content">
+          <h3 class="form-content__title title">Свяжитесь с нами</h3>
+
+          <div class="form-content__top">
+            <div class="form-content__label">Выбор страны*</div>
+            <div class="form-content__radios field--error" data-field="COUNTRY">
+              <label class="radio">
+                <span class="radio__inner">
+                  <input
+                    type="radio"
+                    data-country
+                    data-resident="true"
+                    name="choose"
+                  />
+                  <span></span>
+                </span>
+                <span class="radio__text">Резидент РФ</span>
+              </label>
+              <label class="radio">
+                <span class="radio__inner">
+                  <input
+                    type="radio"
+                    name="choose"
+                    data-resident="false"
+                    data-country
+                  />
+                  <span></span>
+                </span>
+                <span class="radio__text">Не резидент РФ</span>
+              </label>
+            </div>
+
+            <div class="form-content__info">
+              <div class="feedback-contacts__left">
+                <label class="field field-select" data-field="REGION">
+                  <select class="select2">
+                    <option value="" disabled selected hidden>Регион*</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                  </select>
+                </label>
+
+                <label class="field">
+                  <input type="text" />
+                  <span class="field__label">ФИО*</span>
+                </label>
+                <label class="field">
+                  <input type="text" />
+                  <span class="field__label">Название компании*</span>
+                </label>
+
+                <label class="field">
+                  <input type="text" />
+                  <span class="field__label">Email*</span>
+                </label>
+                <div class="form-group">
+                  <input
+                    id="phone"
+                    type="tel"
+                    name="leyka_donor_phone"
+                    class="form-control tel"
+                    inputmode="tel"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="feedback-contacts__right">
+                <label class="field field--textarea">
+                  <textarea></textarea>
+                  <span class="field__label">Сообщение</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-content__bot">
+              <div class="captcha captcha-right field--error">
+                <img src="images/captcha.png" alt="" />
+              </div>
+              <div class="form-content__foot">
+                <label class="checkbox">
+                  <span class="checkbox__inner">
+                    <input type="checkbox" checked />
+                    <span></span>
+                  </span>
+                  <span class="checkbox__text"
+                    >Нажимая кнопку, я принимаю
+                    <a href="#">условия соглашения</a>
+                  </span>
+                </label>
+
+                <a
+                  href="#thanks"
+                  data-fancybox
+                  class="form-content__btn btn btn-dark"
+                >
+                  Отправить
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

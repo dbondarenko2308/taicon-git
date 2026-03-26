@@ -1,0 +1,78 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.brand-val {
+  &-dist {
+    .brand-val__name {
+      max-width: 450px;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: $blue;
+    max-width: 612px;
+    font-weight: 700;
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 17px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin-top: 50px;
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: $blue;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 138%;
+    text-transform: uppercase;
+    max-width: 405px;
+    margin-bottom: 10px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 17px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 15px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  &__btn {
+    margin-top: 50px;
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+}

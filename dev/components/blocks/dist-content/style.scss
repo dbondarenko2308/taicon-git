@@ -1,0 +1,94 @@
+.dist {
+  .home-about {
+    &__grids {
+      grid-template-columns: 1fr 1fr;
+
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__icon {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+
+      @media only screen and (max-width: 991px) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    &__desc {
+      p {
+        font-size: 50px;
+        margin-bottom: 15px;
+        line-height: 120%;
+
+        @media only screen and (max-width: 767px) {
+          font-size: 36px;
+          margin-bottom: 0;
+        }
+      }
+
+      span {
+        font-weight: 700;
+        margin-bottom: 10px;
+
+        @media only screen and (max-width: 767px) {
+          font-size: 13px;
+        }
+      }
+
+      &--text {
+        margin-top: 30px;
+
+        @media only screen and (max-width: 767px) {
+          font-size: 13px;
+        }
+        span {
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+
+
+    &__item {
+      p {
+        font-size: 50px;
+        margin-bottom: 15px;
+
+        @media only screen and (max-width: 767px) {
+          font-size: 32px;
+          margin-bottom: 0;
+        }
+      }
+
+      span {
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
+
+        @media only screen and (max-width: 767px) {
+          font-size: 13px;
+        }
+      }
+
+      &--text {
+        margin-top: 30px;
+
+        @media only screen and (max-width: 767px) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 50px;
+
+  
+  
+  }
+}

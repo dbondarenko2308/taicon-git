@@ -8,7 +8,6 @@
     position: relative;
     overflow: hidden;
 
-
     @media only screen and (max-width: 991px) {
       padding: 40px;
     }
@@ -44,8 +43,6 @@
 
     &__title {
       margin-bottom: 20px;
-
-     
     }
 
     &__text {
@@ -62,7 +59,6 @@
           font-size: 15px;
           margin-bottom: 10px;
           position: relative;
-
 
           @media only screen and (max-width: 767px) {
             font-size: 13px;
@@ -145,7 +141,7 @@
       .checkbox__text {
         font-size: 12px;
         font-weight: 500;
-        
+
         a {
           text-decoration: underline;
           font-weight: 700;
@@ -160,7 +156,52 @@
 
       @media only screen and (max-width: 767px) {
         width: 100%;
+      }
+    }
+  }
 
+  &-contacts {
+    &__left {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+
+    .form-content__title {
+      margin-bottom: 50px;
+
+      @media only screen and (max-width: 991px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .form-content__info {
+      grid-template-columns: 350px 1fr;
+      grid-gap: 20px;
+
+      .field--textarea {
+        height: 100%;
+
+
+        @media only screen and (max-width: 767px) {
+          height: 170px;
+        }
+
+        .field__label {
+          top: 25px;
+          &.top {
+            top: 10px;
+          }
+        }
+
+        textarea:focus ~ .field__label {
+          top: 10px;
+        }
+
+        textarea {
+          height: 100%;
+          padding-top: 25px;
+        }
       }
     }
   }
