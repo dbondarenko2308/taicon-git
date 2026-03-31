@@ -778,10 +778,6 @@ textarea {
   height: auto;
 }
 
-
-
-
-
 .field--error {
   input,
   textarea {
@@ -818,11 +814,7 @@ textarea {
   padding-left: 20px;
 }
 
-@media only screen and (max-width: 767px) {
-  .field__label {
-    font-size: 13px;
-  }
-}
+
 
 .field__label.top {
   top: 0px;
@@ -860,13 +852,7 @@ textarea {
   color: $blue;
 }
 
-@media only screen and (max-width: 991px) {
-  .select2-container--default
-    .select2-selection--single
-    .select2-selection__rendered {
-    font-size: 13px;
-  }
-}
+
 
 .select2-container--default.select2-container--open.select2-container--below
   .select2-selection--single,
@@ -1086,7 +1072,6 @@ input[type='number'] {
   }
 }
 
-
 .form-content__radios {
   &.field--error {
     .radio__inner span {
@@ -1094,11 +1079,92 @@ input[type='number'] {
     }
 
     .radio__text {
-     color: $red;
+      color: $red;
     }
   }
 }
 
-.smart-captcha.field--error  {
+.smart-captcha.field--error {
+  border: 1px solid $red;
+}
+
+.file {
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__text {
+    background: #fff;
+    flex-grow: 10;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 15px;
+    gap: 4px;
+
+
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      b {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 150%;
+      }
+
+      strong {
+        color: $red;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      svg {
+        flex-shrink: 0;
+      }
+    }
+
+    span {
+      display: inline;
+      font-weight: 700;
+      color: $blue;
+      margin-right: 3px;
+    }
+
+    b {
+      display: inline;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+
+    font-family: inherit;
+    border: 0;
+    background: $light-blue;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 300ms;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+.field-select.field--error .select2 {
   border: 1px solid $red;
 }

@@ -1,0 +1,79 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.pagination {
+  margin-top: 50px;
+
+
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  &__item {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $blue;
+    font-weight: 500;
+    font-size: 15px;
+
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+
+    &:hover {
+      color: $demin-blue;
+    }
+
+    &.current {
+      color: $core-black;
+    }
+  }
+
+  &__btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      path {
+        transition: 300ms;
+      }
+    }
+
+
+    &:hover {
+      svg {
+        path {
+          fill: $blue;
+        }
+      }
+    }
+
+    &.hide {
+      pointer-events: none;
+      cursor: initial;
+
+      svg {
+        path {
+          fill: $calm-sky;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.material {
+  &__title {
+    margin-bottom: 70px;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+
+
+    @media only screen and (max-width: 767px) {
+      overflow: auto;
+      margin-bottom: 50px;
+      margin-right: -20px;
+      padding-right: 20px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    a {
+      padding: 14px 30px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 157%;
+      text-transform: uppercase;
+      color: $blue;
+      border-bottom: 1px solid $blue;
+
+      @media only screen and (max-width: 767px) {
+        white-space: nowrap;
+      }
+
+      &:hover {
+        color: $core-black;
+        border-bottom: 1px solid $core-black;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 70px;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 50px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__grids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+
+    .library__item {
+      margin-bottom: 0;
+    }
+
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+
+
+    }
+  }
+
+
+  &__label {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 30px;
+    display: block;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+  }
+
+}

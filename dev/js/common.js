@@ -343,10 +343,6 @@ $(document).ready(function() {
 		const $file = $(this)
 		const $input = $file.find('.file__input')
 		const $btn = $file.find('.file__btn')
-		const $progress = $file.find('.file__progress')
-		const $bar = $file.find('.file__bar-inner')
-		const $success = $file.find('.file__success')
-		const $error = $file.find('.file__error')
 		const $text = $file.find('.file__text')
 
 		const defaultText = $text.html()
@@ -354,16 +350,20 @@ $(document).ready(function() {
 		const maxSize = 5 * 1024 * 1024
 		const allowedExt = ['jpg', 'jpeg', 'png', 'pdf', 'docx', 'xlsx']
 
-		// защита от дублей
 		$input.off('change')
 		$btn.off('click')
 
-		// открыть файл
 		$btn.on('click', function() {
+			if ($btn.hasClass('file__btn--remove')) {
+				reset()
+				$btn.removeClass('file__btn--remove').text('ЗАГРУЗИТЬ')
+				$input.val('')
+				return
+			}
+
 			$input.trigger('click')
 		})
 
-		// выбор файла
 		$input.on('change', function() {
 			const file = this.files[0]
 			if (!file) return
@@ -373,83 +373,109 @@ $(document).ready(function() {
 			const ext = file.name.split('.').pop().toLowerCase()
 
 			if (file.size > maxSize) {
-				showError('Файл должен быть не более 5 МБ')
+				showError('Загруженный файл должен быть не более 5 мб')
 				return
 			}
 
 			if (!allowedExt.includes(ext)) {
-				showError('Неверный формат файла')
+				showError(
+					'Загруженный файл должен быть формата jpeg, png, docx, xlsx, pdf'
+				)
 				return
 			}
 
-			upload(file)
+			success(file)
 		})
 
-		function upload(file) {
-			$file.addClass('is-loading')
-			$progress.show()
-			$progress.find('.file__name').text(file.name)
-
-			let percent = 0
-
-			const interval = setInterval(() => {
-				percent += 10
-				$bar.css('width', percent + '%')
-
-				if (percent >= 100) {
-					clearInterval(interval)
-					success(file)
-				}
-			}, 150)
-		}
-
 		function success(file) {
-			$file.removeClass('is-loading').addClass('is-success')
-
-			$progress.hide()
-			$success.show()
-			$success.find('.file__name').text(file.name)
-
-			$btn.text('ЗАМЕНИТЬ')
-
-			// меняем текст
 			$text.html(`
-            Файл загружен:<br>
-            <b>${file.name}</b>
-        `)
+		
+
+			<div>
+				<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1893 2.68934C10.8499 2.02882 11.8122 1.5 12.9 1.5H23.25C23.6478 1.5 24.0294 1.65804 24.3107 1.93934L31.0607 8.68934C31.342 8.97064 31.5 9.35218 31.5 9.75V24.6C31.5 25.6878 30.9712 26.6501 30.3107 27.3107C29.6501 27.9712 28.6878 28.5 27.6 28.5H12.9C11.8122 28.5 10.8499 27.9712 10.1893 27.3107C9.52882 26.6501 9 25.6878 9 24.6V5.4C9 4.31215 9.52882 3.34986 10.1893 2.68934ZM12.9 4.5C12.7878 4.5 12.5501 4.57118 12.3107 4.81066C12.0712 5.05014 12 5.28785 12 5.4V24.6C12 24.7122 12.0712 24.9499 12.3107 25.1893C12.5501 25.4288 12.7878 25.5 12.9 25.5H27.6C27.7122 25.5 27.9499 25.4288 28.1893 25.1893C28.4288 24.9499 28.5 24.7122 28.5 24.6V10.3713L22.6287 4.5H12.9Z" fill="#7EA5BA" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 9.9C5.32843 9.9 6 10.5716 6 11.4V30.6C6 30.7122 6.07118 30.9499 6.31066 31.1893C6.55014 31.4288 6.78785 31.5 6.9 31.5H21.6C22.4284 31.5 23.1 32.1716 23.1 33C23.1 33.8284 22.4284 34.5 21.6 34.5H6.9C5.81215 34.5 4.84986 33.9712 4.18934 33.3107C3.52882 32.6501 3 31.6878 3 30.6V11.4C3 10.5716 3.67157 9.9 4.5 9.9Z" fill="#7EA5BA" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.5 1.5C23.3284 1.5 24 2.17157 24 3V9H30C30.8284 9 31.5 9.67157 31.5 10.5C31.5 11.3284 30.8284 12 30 12H22.5C21.6716 12 21 11.3284 21 10.5V3C21 2.17157 21.6716 1.5 22.5 1.5Z" fill="#7EA5BA" />
+</svg>
+				<b>${file.name}</b>
+			</div>
+		`)
+
+			$btn.addClass('file__btn--remove').text('УДАЛИТЬ')
 
 			$input.val('')
 		}
 
-		function showError(text) {
-			$file.addClass('is-error')
-			$error.text(text).show()
-
-			// меняем текст
+		function showError(message) {
 			$text.html(`
-            <span style="color:red">${text}</span><br>
-            Попробуйте снова
-        `)
+					<div>
+				<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1893 2.68934C10.8499 2.02882 11.8122 1.5 12.9 1.5H23.25C23.6478 1.5 24.0294 1.65804 24.3107 1.93934L31.0607 8.68934C31.342 8.97064 31.5 9.35218 31.5 9.75V24.6C31.5 25.6878 30.9712 26.6501 30.3107 27.3107C29.6501 27.9712 28.6878 28.5 27.6 28.5H12.9C11.8122 28.5 10.8499 27.9712 10.1893 27.3107C9.52882 26.6501 9 25.6878 9 24.6V5.4C9 4.31215 9.52882 3.34986 10.1893 2.68934ZM12.9 4.5C12.7878 4.5 12.5501 4.57118 12.3107 4.81066C12.0712 5.05014 12 5.28785 12 5.4V24.6C12 24.7122 12.0712 24.9499 12.3107 25.1893C12.5501 25.4288 12.7878 25.5 12.9 25.5H27.6C27.7122 25.5 27.9499 25.4288 28.1893 25.1893C28.4288 24.9499 28.5 24.7122 28.5 24.6V10.3713L22.6287 4.5H12.9Z" fill="#7EA5BA" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 9.9C5.32843 9.9 6 10.5716 6 11.4V30.6C6 30.7122 6.07118 30.9499 6.31066 31.1893C6.55014 31.4288 6.78785 31.5 6.9 31.5H21.6C22.4284 31.5 23.1 32.1716 23.1 33C23.1 33.8284 22.4284 34.5 21.6 34.5H6.9C5.81215 34.5 4.84986 33.9712 4.18934 33.3107C3.52882 32.6501 3 31.6878 3 30.6V11.4C3 10.5716 3.67157 9.9 4.5 9.9Z" fill="#7EA5BA" />
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.5 1.5C23.3284 1.5 24 2.17157 24 3V9H30C30.8284 9 31.5 9.67157 31.5 10.5C31.5 11.3284 30.8284 12 30 12H22.5C21.6716 12 21 11.3284 21 10.5V3C21 2.17157 21.6716 1.5 22.5 1.5Z" fill="#7EA5BA" />
+</svg>
+				<strong>${message}</strong>
+			</div>
 
-			$btn.text('ЗАГРУЗИТЬ')
+
+			
+		`)
+
+			$btn.removeClass('file__btn--remove').text('ЗАГРУЗИТЬ')
+
+			$input.val('')
 		}
 
 		function reset() {
-			$file.removeClass('is-error is-success is-loading')
-			$error.hide().text('')
-			$success.hide()
-			$progress.hide()
-			$bar.css('width', '0%')
-
-			// вернуть дефолт
 			$text.html(defaultText)
 		}
+	})
 
-		// удалить файл
-		$file.on('click', '.file__remove', function() {
-			reset()
-			$btn.text('ЗАГРУЗИТЬ')
-			$input.val('')
-		})
+	$(
+		'.library__menu--item > .library__menu-title .library__arrow'
+	).click(function(e) {
+		e.preventDefault()
+		const $arrow = $(this)
+		const $submenu = $arrow
+			.closest('.library__menu--item')
+			.find('> .library__submenu')
+
+		$arrow.toggleClass('active')
+		$submenu.slideToggle(200)
+	})
+
+	$('.library__submenu-title .library__arrow').click(function(e) {
+		e.preventDefault()
+		const $arrow = $(this)
+		const $inner = $arrow
+			.closest('.library__submenu-item')
+			.find('> .library__submenu-inner')
+
+		$arrow.toggleClass('active')
+		$inner.slideToggle(200)
+	})
+
+	$('.library__mobile--btn').on('click', function() {
+		$('.library__aside').addClass('active')
+	})
+
+	$('.library__aside--back').on('click', function() {
+		$('.library__aside').removeClass('active')
+	})
+
+	$('.material__tabs a').on('click', function(e) {
+		e.preventDefault()
+
+		const index = $(this).index()
+		const target = $('.material__item').eq(index)
+
+		if (target.length) {
+			$('html, body').animate(
+				{
+					scrollTop: target.offset().top - 180 
+				},
+				500
+			)
+		}
 	})
 })

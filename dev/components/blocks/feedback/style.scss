@@ -182,7 +182,6 @@
       .field--textarea {
         height: 100%;
 
-
         @media only screen and (max-width: 767px) {
           height: 170px;
         }
@@ -202,6 +201,77 @@
           height: 100%;
           padding-top: 25px;
         }
+      }
+    }
+  }
+
+  &-support {
+    margin-top: 120px;
+    margin-bottom: 140px;
+
+    @media only screen and (max-width: 767px) {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    .feedback {
+      &-contacts {
+        &__left {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+
+          @media only screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+          }
+
+          .field__label {
+            top: 25px;
+            &.top {
+              top: 10px;
+            }
+          }
+
+          textarea:focus ~ .field__label {
+            top: 10px;
+          }
+
+          textarea {
+            height: 100%;
+            padding-top: 25px;
+          }
+
+          .field--textarea {
+            grid-column: span 2;
+            height: 100%;
+
+            @media only screen and (max-width: 767px) {
+              grid-column: span 1;
+            }
+            textarea {
+              height: 86px;
+            }
+          }
+        }
+      }
+    }
+
+    .form-content__info {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+
+      @media only screen and (max-width: 991px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-content__title {
+      margin-bottom: 50px;
+
+      max-width: 750px;
+
+      @media only screen and (max-width: 767px) {
+        margin-bottom: 30px;
+        max-width: 70%;
       }
     }
   }
