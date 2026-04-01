@@ -9,9 +9,10 @@
 
   &__inner {
    
-    min-height: 765px;
     border-radius: 50px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 
     video {
       width: 100%;
@@ -20,11 +21,9 @@
     }
 
     @media only screen and (max-width: 991px) {
-      min-height: 448px;
     }
 
     @media only screen and (max-width: 767px) {
-      min-height: 180px;
       border-radius: 20px;
     }
   }

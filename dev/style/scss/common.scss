@@ -586,6 +586,10 @@ section {
   border-radius: 10px;
   border: 1px solid transparent;
 
+  @media only screen and (max-width: 767px) {
+    height: 46px;
+  }
+
   &:focus {
     border: 1px solid $core-black;
   }
@@ -814,8 +818,6 @@ textarea {
   padding-left: 20px;
 }
 
-
-
 .field__label.top {
   top: 0px;
   transform: translateY(0);
@@ -851,8 +853,6 @@ textarea {
   .select2-selection__rendered {
   color: $blue;
 }
-
-
 
 .select2-container--default.select2-container--open.select2-container--below
   .select2-selection--single,
@@ -1109,8 +1109,6 @@ input[type='number'] {
     font-size: 15px;
     gap: 4px;
 
-
-
     > div {
       display: flex;
       align-items: center;
@@ -1167,4 +1165,21 @@ input[type='number'] {
 
 .field-select.field--error .select2 {
   border: 1px solid $red;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 130%;
+  text-transform: uppercase;
+
+
+  @media only screen and (max-width: 991px) {
+    font-size: 38px;
+  }
+
+
+  @media only screen and (max-width: 767px) {
+    font-size: 22px;
+  }
 }

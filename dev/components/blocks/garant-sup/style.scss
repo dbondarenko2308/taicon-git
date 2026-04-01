@@ -1,0 +1,89 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.garant-sup {
+  &__title {
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 991px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 138%;
+    text-transform: uppercase;
+    color: $demin-blue;
+    margin-bottom: 20px;
+    margin-top: 50px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 17px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+    padding-left: 20px;
+    font-size: 15px;
+
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+      padding-left: 15px;
+    }
+
+    li {
+      padding-left: 10px;
+      margin-bottom: 10px;
+
+      @media only screen and (max-width: 767px) {
+        
+        padding-left: 7px;
+      }
+
+    }
+  }
+
+
+ 
+}
+
+
+ .garant-list {
+    margin-top: 140px;
+
+    @media only screen and (max-width: 767px) {
+      margin-top: 80px;
+    }
+
+    &__label {
+      margin-bottom: 50px;
+
+      @media only screen and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__item {
+      margin-top: 140px;
+
+      @media only screen and (max-width: 991px) {
+        
+        margin-top: 80px;
+      }
+    }
+
+    &__info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }

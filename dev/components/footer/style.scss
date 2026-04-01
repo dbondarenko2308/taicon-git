@@ -5,12 +5,16 @@
   width: 100%;
   padding-bottom: 24px;
   position: relative;
-
+  margin-top: 140px;
   display: flex;
   align-items: flex-end;
 
 
   background: $calm-sky;
+
+  @media only screen and (max-width: 991px) {
+    margin-top: 70px;
+  }
 
   &__inner {
     padding: 60px 0 30px;

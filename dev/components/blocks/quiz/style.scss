@@ -1,0 +1,305 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.quiz {
+  margin-top: 140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 80px;
+  }
+
+  &__inner {
+    background: linear-gradient(225deg, #7ea5ba 0%, #d5e3eb 100%);
+    padding: 60px 70px;
+    position: relative;
+    border-radius: 50px;
+    min-height: 672px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    @media only screen and (max-width: 991px) {
+      padding: 40px;
+      min-height: 740px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      padding: 20px;
+      min-height: 693px;
+      border-radius: 20px;
+    }
+
+    form {
+      flex-grow: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      max-width: 1077px;
+    }
+  }
+
+  &__step {
+    &--item {
+      margin-bottom: 10px;
+    }
+
+    &--grids {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 600px;
+
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    .radio {
+      margin-bottom: 20px;
+
+      @media only screen and (max-width: 767px) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 991px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__progress {
+    max-width: 1077px;
+    height: 5px;
+    background: $blue;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+
+    > div {
+      background: $core-black;
+      height: 5px;
+    }
+  }
+
+  &__fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+
+    .field--textarea {
+      grid-column: span 2;
+
+      textarea {
+        min-height: 194px;
+      }
+
+      .field__label {
+        top: 25px;
+        @media only screen and (max-width: 767px) {
+          top: 50px;
+        }
+        &.top {
+          top: 10px;
+        }
+      }
+
+      textarea:focus ~ .field__label {
+        top: 10px;
+      }
+
+      textarea {
+        height: 100%;
+        padding-top: 25px;
+        @media only screen and (max-width: 767px) {
+          padding-top: 65px;
+        }
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 144%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  &__steps {
+    flex-grow: 10;
+    height: 100%;
+  }
+
+  &__before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 991px) {
+      height: 220px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      height: 136px;
+      top: -5%;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+
+  &__desc {
+    @media only screen and (max-width: 767px) {
+      text-align: right;
+      width: 100%;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+
+    .field--textarea {
+      height: 100%;
+
+      @media only screen and (max-width: 767px) {
+        height: 81px;
+      }
+
+      .field__label {
+        top: 25px;
+        &.top {
+          top: 10px;
+        }
+      }
+
+      textarea:focus ~ .field__label {
+        top: 10px;
+      }
+
+      textarea {
+        height: 100%;
+        padding-top: 25px;
+      }
+    }
+
+    .file {
+      min-height: 172px;
+
+      @media only screen and (max-width: 767px) {
+        min-height: 109px;
+        height: 109px;
+      }
+
+      &__text {
+        padding: 10px 15px;
+        font-size: 12px;
+      }
+    }
+
+    .field--textarea {
+      height: 100%;
+    }
+
+    textarea {
+      height: 100%;
+    }
+
+    .checkbox {
+      align-items: center;
+      height: fit-content;
+    }
+  }
+
+  &__area {
+    .field--textarea {
+      height: 266px;
+
+      .field__label {
+        top: 25px;
+        &.top {
+          top: 10px;
+        }
+      }
+
+      textarea:focus ~ .field__label {
+        top: 10px;
+      }
+
+      textarea {
+        height: 100%;
+        padding-top: 25px;
+      }
+    }
+  }
+
+  &__aside {
+    max-width: 613px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 147%;
+
+    a {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+
+  &__btn {
+    padding: 14px 30px;
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  &__next {
+    @media only screen and (max-width: 767px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}

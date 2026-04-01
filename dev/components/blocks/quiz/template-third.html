@@ -1,0 +1,207 @@
+<div class="quiz">
+  <div class="container">
+    <div class="quiz__inner">
+      <div class="quiz__before">
+        <img src="images/quiz-before.svg" alt="" />
+      </div>
+
+      <h3 class="quiz__title title">
+        Написать <br />
+        в сервисную поддержку
+      </h3>
+
+      <div class="quiz__progress">
+        <div></div>
+      </div>
+
+      <form action="#">
+        <div class="quiz__steps">
+          <div class="quiz__step">
+            <div class="quiz__label">Выберите тип обращения*</div>
+            <label class="radio">
+              <span class="radio__inner">
+                <input type="radio" name="choose" />
+                <span></span>
+              </span>
+              <span class="radio__text">Партнёр</span>
+            </label>
+            <label class="radio">
+              <span class="radio__inner">
+                <input type="radio" name="choose" />
+                <span></span>
+              </span>
+              <span class="radio__text">Розничный покупатель</span>
+            </label>
+            <label class="radio">
+              <span class="radio__inner">
+                <input type="radio" name="choose" checked />
+                <span></span>
+              </span>
+              <span class="radio__text">Заявка на запчасти</span>
+            </label>
+          </div>
+
+          <div class="quiz__step">
+            <div class="quiz__label">Сведения о дилере</div>
+
+            <div class="quiz__fields">
+              <label class="field field--error">
+                <input type="text" />
+                <span class="field__label">Название компании*</span>
+
+                <div class="field-error-text">Обязательное поле*</div>
+              </label>
+              <label class="field">
+                <input type="number" />
+                <span class="field__label">ИНН*</span>
+              </label>
+              <label class="field">
+                <input type="text" />
+                <span class="field__label">ФИО*</span>
+              </label>
+
+              <div class="form-group">
+                <input
+                  id="phone"
+                  type="tel"
+                  name="leyka_donor_phone"
+                  class="form-control tel"
+                  inputmode="tel"
+                  value=""
+                />
+              </div>
+              <label class="field">
+                <input type="text" />
+                <span class="field__label">Email*</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz__step">
+            <div class="quiz__label">Расскажите об оборудовании и дефекте</div>
+
+            <div class="quiz__area">
+              <label class="field field--textarea">
+                <textarea></textarea>
+                <span class="field__label">Сообщение </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz__step">
+            <div class="quiz__aside">
+              Для уменьшения времени на обработку заявки вы можете скачать
+              и заполнить <a href="#">шаблон для заказа запчастей</a>, а также приложить фото
+              с серийным номером оборудования. Загрузите их в форму и нажмите
+              «Отправить», заполнив контактные данные.
+            </div>
+          </div>
+
+          <div class="quiz__step">
+            <div class="quiz__label">Загрузите файлы</div>
+
+            <div class="quiz__info">
+
+               <div class="file">
+                <input type="file" class="file__input" hidden="" />
+
+                <div class="file__body">
+                  <div class="file__text">
+                    <p><span> Загрузите файл</span><b>формата</b></p>
+                    <p>jpeg, png, docx, xlsx, pdf, <b>не более 5 МБ</b></p>
+                  </div>
+
+                  <button type="button" class="file__btn">ЗАГРУЗИТЬ</button>
+                </div>
+              </div>
+              
+
+              <div class="file">
+                <input type="file" class="file__input" hidden="" />
+
+                <div class="file__body">
+                  <div class="file__text">
+                    <p><span> Загрузите файл</span><b>формата</b></p>
+                    <p>jpeg, png, docx, xlsx, pdf, <b>не более 5 МБ</b></p>
+                  </div>
+
+                  <button type="button" class="file__btn">ЗАГРУЗИТЬ</button>
+                </div>
+              </div>
+
+              <div class="captcha captcha-right field--error">
+                <img src="images/captcha.png" alt="" />
+              </div>
+
+              <label class="checkbox">
+                <span class="checkbox__inner">
+                  <input type="checkbox" checked="" />
+                  <span></span>
+                </span>
+                <span class="checkbox__text"
+                  >Нажимая кнопку, я принимаю
+                  <a href="#">условия соглашения</a>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz__bottom">
+          <div class="quiz__desc">Шаг <span>1</span>/5</div>
+
+          <div class="quiz__btns">
+            <div class="quiz__back btn btn-light">
+              <svg
+                width="8"
+                height="14"
+                viewBox="0 0 8 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.70711 13.7071C7.31658 14.0976 6.68342 14.0976 6.29289 13.7071L0.292894 7.70711C-0.0976309 7.31658 -0.0976308 6.68342 0.292894 6.29289L6.29289 0.292893C6.68342 -0.0976316 7.31658 -0.0976315 7.70711 0.292893C8.09763 0.683417 8.09763 1.31658 7.70711 1.70711L2.41421 7L7.70711 12.2929C8.09763 12.6834 8.09763 13.3166 7.70711 13.7071Z"
+                  fill="white"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.70711 13.7071C7.31658 14.0976 6.68342 14.0976 6.29289 13.7071L0.292894 7.70711C-0.0976309 7.31658 -0.0976308 6.68342 0.292894 6.29289L6.29289 0.292893C6.68342 -0.0976316 7.31658 -0.0976315 7.70711 0.292893C8.09763 0.683417 8.09763 1.31658 7.70711 1.70711L2.41421 7L7.70711 12.2929C8.09763 12.6834 8.09763 13.3166 7.70711 13.7071Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+
+            <div class="quiz__next btn btn-dark">
+              <span>Вперед</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.52925 3.52861C5.7896 3.26826 6.21171 3.26826 6.47206 3.52861L10.4721 7.52861C10.7324 7.78895 10.7324 8.21107 10.4721 8.47141L6.47206 12.4714C6.21171 12.7318 5.7896 12.7318 5.52925 12.4714C5.2689 12.2111 5.2689 11.789 5.52925 11.5286L9.05784 8.00001L5.52925 4.47141C5.2689 4.21107 5.2689 3.78896 5.52925 3.52861Z"
+                  fill="white"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.52925 3.52861C5.7896 3.26826 6.21171 3.26826 6.47206 3.52861L10.4721 7.52861C10.7324 7.78895 10.7324 8.21107 10.4721 8.47141L6.47206 12.4714C6.21171 12.7318 5.7896 12.7318 5.52925 12.4714C5.2689 12.2111 5.2689 11.789 5.52925 11.5286L9.05784 8.00001L5.52925 4.47141C5.2689 4.21107 5.2689 3.78896 5.52925 3.52861Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <button class="quiz__btn btn btn-dark">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

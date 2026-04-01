@@ -423,7 +423,6 @@ $(document).ready(function() {
 
 			$btn.removeClass('file__btn--remove').text('ЗАГРУЗИТЬ')
 
-			$input.val('')
 		}
 
 		function reset() {
@@ -472,10 +471,67 @@ $(document).ready(function() {
 		if (target.length) {
 			$('html, body').animate(
 				{
-					scrollTop: target.offset().top - 180 
+					scrollTop: target.offset().top - 180
 				},
 				500
 			)
 		}
+	})
+
+	$(function() {
+		const $steps = $('.quiz__step')
+		const total = $steps.length
+		let current = 0
+
+		const $progress = $('.quiz__progress div')
+		const $currentStep = $('.quiz__desc span')
+
+		const $next = $('.quiz__next')
+		const $back = $('.quiz__back')
+		const $submit = $('.quiz__btn')
+
+		$steps.hide().eq(0).show()
+		$submit.hide()
+
+		function update() {
+			$steps.hide().eq(current).fadeIn(200)
+
+			$currentStep.text(current + 1)
+
+			const percent = (current + 1) / total * 100
+			$progress.css('width', percent + '%')
+
+			$back.toggle(current > 0)
+
+			if (current === total - 1) {
+				$next.hide()
+				$back.hide()
+				$submit.show()
+			} else {
+				$next.show()
+				$submit.hide()
+			}
+		}
+
+		$next.on('click', function() {
+			if (current < total - 1) {
+				current++
+				update()
+			}
+		})
+
+		$back.on('click', function() {
+			if (current > 0) {
+				current--
+				update()
+			}
+		})
+
+		$('.quiz__form').on('submit', function(e) {
+			e.preventDefault()
+			alert('Дима подставь тут модалку')
+		})
+
+		update()
 	})
 })

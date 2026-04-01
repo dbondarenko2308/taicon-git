@@ -175,6 +175,10 @@
       line-height: 138%;
       text-transform: uppercase;
 
+      @media only screen and (max-width: 991px) {
+        font-size: 20px;
+      }
+
       @media only screen and (max-width: 767px) {
         font-size: 17px;
       }
