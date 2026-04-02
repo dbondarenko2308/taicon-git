@@ -423,7 +423,6 @@ $(document).ready(function() {
 		`)
 
 			$btn.removeClass('file__btn--remove').text('ЗАГРУЗИТЬ')
-
 		}
 
 		function reset() {
@@ -479,61 +478,105 @@ $(document).ready(function() {
 		}
 	})
 
+	// NEW QUIZ
+
 	$(function() {
-		const $steps = $('.quiz__step')
-		const total = $steps.length
-		let current = 0
+		let currentStep = 0
+		let $currentSteps = null
+		let selectedType = null
+		let totalSteps = 0
 
-		const $progress = $('.quiz__progress div')
-		const $currentStep = $('.quiz__desc span')
+		const $quiz = $('.quiz')
+		const $head = $quiz.find('.quiz__head')
+		const $next = $quiz.find('.quiz__next')
+		const $back = $quiz.find('.quiz__back')
+		const $submit = $quiz.find('.quiz__btn')
+		const $counter = $quiz.find('.quiz__desc')
 
-		const $next = $('.quiz__next')
-		const $back = $('.quiz__back')
-		const $submit = $('.quiz__btn')
+		$back.hide()
+		$submit.removeClass('show')
+		$next.show()
+		$counter.text('')
 
-		$steps.hide().eq(0).show()
-		$submit.hide()
-
-		function update() {
-			$steps.hide().eq(current).fadeIn(200)
-
-			$currentStep.text(current + 1)
-
-			const percent = (current + 1) / total * 100
-			$progress.css('width', percent + '%')
-
-			$back.toggle(current > 0)
-
-			if (current === total - 1) {
-				$next.hide()
-				$back.hide()
-				$submit.show()
-			} else {
-				$next.show()
-				$submit.hide()
-			}
-		}
+		$head.find('input[type="radio"]').on('change', function() {
+			selectedType = $(this).closest('label').index()
+		})
 
 		$next.on('click', function() {
-			if (current < total - 1) {
-				current++
-				update()
+			if ($currentSteps === null) {
+				if (selectedType === null) {
+					alert('Выберите тип обращения')
+					return
+				}
+
+				if (selectedType === 1) {
+					$currentSteps = $('.quiz__steps--first')
+				} else if (selectedType === 2) {
+					$currentSteps = $('.quiz__steps--second')
+				} else if (selectedType === 3) {
+					$currentSteps = $('.quiz__steps--third')
+				} else {
+					alert('Ошибка выбора')
+					return
+				}
+
+				$head.hide()
+				$currentSteps.addClass('active')
+
+				const $steps = $currentSteps.find('.quiz__step')
+				totalSteps = $steps.length
+
+				currentStep = 0
+				showStep()
+				return
+			}
+
+			const $steps = $currentSteps.find('.quiz__step')
+
+			if (currentStep < $steps.length - 1) {
+				currentStep++
+				showStep()
 			}
 		})
 
 		$back.on('click', function() {
-			if (current > 0) {
-				current--
-				update()
+			if (currentStep === 0) {
+				$currentSteps.removeClass('active')
+				$currentSteps = null
+
+				$head.show()
+
+				$back.hide()
+				$submit.removeClass('show')
+				$next.show()
+
+				$counter.text('')
+
+				return
 			}
+
+			currentStep--
+			showStep()
 		})
 
-		$('.quiz__form').on('submit', function(e) {
-			e.preventDefault()
-			alert('Дима подставь тут модалку')
-		})
+		function showStep() {
+			const $steps = $currentSteps.find('.quiz__step')
 
-		update()
+			$steps.removeClass('active')
+			$steps.eq(currentStep).addClass('active')
+
+			$counter.text(`Шаг ${currentStep + 1}/${totalSteps}`)
+
+			$back.show()
+
+			if (currentStep === totalSteps - 1) {
+				$next.hide()
+				$submit.addClass('show')
+			} else {
+				$next.show()
+				$submit.removeClass('show')
+			}
+		}
 	})
 })
 

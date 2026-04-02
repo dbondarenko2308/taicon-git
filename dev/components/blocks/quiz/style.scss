@@ -131,6 +131,9 @@
     align-items: center;
     gap: 10px;
 
+    flex-grow: 10;
+    justify-content: flex-end;
+    margin-right: 10px;
     @media only screen and (max-width: 767px) {
       width: 100%;
     }
@@ -302,4 +305,39 @@
       justify-content: space-between;
     }
   }
+}
+
+.quiz__head {
+  .radio {
+    margin-bottom: 15px;
+  }
+}
+
+
+.quiz__steps {
+  display: none;
+}
+
+.quiz__steps.active {
+  display: block;
+}
+
+.quiz__step {
+  display: none;
+}
+
+.quiz__step.active {
+  display: block;
+}
+
+.quiz__btn {
+  display: none;
+}
+
+.quiz__btn.show {
+  display: inline-flex;
+}
+
+.quiz__blocks {
+  flex-grow: 10;
 }
