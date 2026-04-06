@@ -2,19 +2,21 @@
 @@include('components/elements/breadcrumbs/template.html',{
 list: ['<a href="index.html">Главная</a>',],
 'page': 'Инверторные сплит-системы thaicon',
-'title': true,
+'title': false,
 })
 
 
 
 
-<div class="catalog-detal">
+<div class="catalog">
 
   <div class="container">
-    <div class="catalog-detal__inner">
+    <div class="catalog__inner">
+      <h1 class="catalog__title elem-title">Инверторные сплит-системы thaicon</h1>
       @@include('components/blocks/catalog-item/template.html',{})
       @@include('components/blocks/catalog-elect/template.html',{})
       @@include('components/blocks/catalog-lib/template.html',{})
+        @@include('components/blocks/catalog-section/template-title.html',{})
     </div>
   </div>
 </div>
