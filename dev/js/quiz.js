@@ -8,10 +8,12 @@ $(function() {
 	const $head = $quiz.find('.quiz__head')
 	const $footer = $quiz.find('.quiz__footer')
 	const $counter = $quiz.find('.quiz__desc')
+	const $progress = $quiz.find('.quiz__progress div') // // Прогресс
 
 	const $nextMain = $quiz.find('.quiz__footer .quiz__next')
 
 	$counter.text('')
+	$progress.css('width', '0%') //// Прогресс
 
 	$head.find('input[type="radio"]').on('change', function() {
 		selectedType = $(this).closest('.radio').index() - 1
@@ -61,6 +63,7 @@ $(function() {
 			$footer.show()
 
 			$counter.text('')
+			$progress.css('width', '0%') // Прогресс
 
 			return
 		}
@@ -68,6 +71,7 @@ $(function() {
 		currentStep--
 		showStep()
 	})
+
 	function showStep() {
 		const $steps = $currentSteps.find('.quiz__step')
 
@@ -94,5 +98,9 @@ $(function() {
 
 			$bottom.removeClass('is-last')
 		}
+
+		// ПРОГРЕСС
+		const percent = (currentStep + 1) / totalSteps * 100
+		$progress.css('width', percent + '%')
 	}
 })

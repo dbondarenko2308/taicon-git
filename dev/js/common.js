@@ -399,7 +399,6 @@ $('.file').each(function() {
 
 		$btn.addClass('file__btn--remove').text('УДАЛИТЬ')
 
-		$input.val('')
 	}
 
 	function showError(message) {

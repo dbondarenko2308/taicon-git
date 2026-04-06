@@ -1,0 +1,24 @@
+@@include('components/header/template.html',{"title": 'Инверторные сплит-системы thaicon'})
+@@include('components/elements/breadcrumbs/template.html',{
+list: ['<a href="index.html">Главная</a>',],
+'page': 'Инверторные сплит-системы thaicon',
+'title': true,
+})
+
+
+
+
+<div class="catalog-detal">
+
+  <div class="container">
+    <div class="catalog-detal__inner">
+      @@include('components/blocks/catalog-item/template.html',{})
+      @@include('components/blocks/catalog-elect/template.html',{})
+      @@include('components/blocks/catalog-lib/template.html',{})
+    </div>
+  </div>
+</div>
+ 
+
+
+@@include('components/footer/template.html',{})

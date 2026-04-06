@@ -1084,8 +1084,14 @@ input[type='number'] {
   }
 }
 
-.smart-captcha.field--error {
-  border: 1px solid $red;
+.field--error {
+  .radio__inner span {
+    border: 1px solid $red;
+  }
+
+  .radio__text {
+    color: $red;
+  }
 }
 
 .file {
@@ -1173,13 +1179,22 @@ h1 {
   line-height: 130%;
   text-transform: uppercase;
 
-
   @media only screen and (max-width: 991px) {
     font-size: 38px;
   }
 
-
   @media only screen and (max-width: 767px) {
     font-size: 22px;
   }
+}
+
+.smart-captcha {
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.smart-captcha.field--error {
+  border: 1px solid #e30613;
+  border-radius: 11px;
+  overflow: hidden;
 }

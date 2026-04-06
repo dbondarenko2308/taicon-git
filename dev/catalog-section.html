@@ -1,0 +1,24 @@
+@@include('components/header/template.html',{"title": 'Thaicon LIFE. Климатическое оборудование для дома и небольших коммерческих объектов'})
+@@include('components/elements/breadcrumbs/template.html',{
+list: ['<a href="index.html">Главная</a>',],
+'page': 'Thaicon LIFE. Климатическое оборудование для дома и небольших коммерческих объектов',
+'title': true,
+})
+
+
+
+
+<div class="catalog">
+
+  <div class="container">
+    <div class="catalog__inner">
+      @@include('components/blocks/catalog-section/template.html',{})
+      @@include('components/blocks/catalog-elect/template.html',{})
+      @@include('components/blocks/catalog-lib/template.html',{})
+    </div>
+  </div>
+</div>
+ 
+
+
+@@include('components/footer/template.html',{})
