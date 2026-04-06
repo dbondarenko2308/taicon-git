@@ -169,4 +169,35 @@
       color: $blue;
     }
   }
+
+
+  &-black {
+
+    .catalog-item {
+
+      &__img {
+        background: $core-black;
+      }
+
+      &__info {
+        background: $core-black;
+        color: #fff;
+        border-left: 1px solid $mid-blue;
+      }
+
+      &__btn {
+        background: #fff;
+
+        color: $dark-blue;
+
+
+        &:hover {
+          background: $blue;
+
+
+          color: #fff;
+        }
+      }
+    }
+  }
 }

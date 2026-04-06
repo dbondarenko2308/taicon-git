@@ -1,22 +1,19 @@
-
+@use '../../../style/scss/variables.scss' as *;
 
 .catalog-elect {
-  margin-bottom: 140px;
 
+  margin: 140px 0;
   @media only screen and (max-width: 991px) {
-    margin-bottom: 80px;
+    margin: 80px 0;
   }
-
 
   &__title {
     margin-bottom: 50px;
-
 
     @media only screen and (max-width: 991px) {
       margin-bottom: 30px;
     }
   }
-
 
   &__items {
     display: grid;
@@ -29,6 +26,21 @@
 
     .library__item {
       margin: 0;
+    }
+  }
+
+  &-black {
+    .library__item {
+      background: $core-black;
+      color: #fff;
+
+      &--arrow {
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
     }
   }
 }

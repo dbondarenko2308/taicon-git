@@ -68,4 +68,37 @@
       justify-content: space-between;
     }
   }
+
+  &-black {
+    .catalog-lib {
+      &__info {
+        background: $core-black;
+        color: #fff;
+      }
+
+      &__btn {
+        background: #fff;
+
+        color: $core-black;
+
+        &:hover {
+          background: $blue;
+
+          color: #fff;
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+        svg {
+          path {
+            transition: 300ms;
+            fill: $core-black;
+          }
+        }
+      }
+    }
+  }
 }

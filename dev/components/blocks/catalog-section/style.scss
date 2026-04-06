@@ -1,7 +1,6 @@
 @use '../../../style/scss/variables.scss' as *;
 
 .catalog-cards {
-  margin-bottom: 140px;
 
 
   &-title {
@@ -12,9 +11,6 @@
     }
   }
 
-  @media only screen and (max-width: 767px) {
-    margin-bottom: 80px;
-  }
   &__items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -107,6 +103,39 @@
       width: 46px;
       height: 46px;
       margin-left: 10px;
+    }
+  }
+
+  &-black {
+    .catalog-cards {
+
+      &__info {
+        color: #fff;
+        background: $core-black;
+      }
+
+
+      &__arrow {
+        background: #fff;
+
+        &:hover {
+          background: $blue;
+
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+
+        svg 
+        {
+          path {
+            fill: $core-black;
+          }
+        }
+      }
+      
     }
   }
 }
