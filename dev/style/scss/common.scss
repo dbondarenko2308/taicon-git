@@ -1222,3 +1222,85 @@ h1 {
     background: $light-blue;
   }
 }
+
+.fancybox-button--zoom,
+.fancybox-button--play,
+.fancybox-button--thumbs {
+  display: none !important;
+}
+
+
+.fancybox-button--close {
+  background: none;
+  width: 60px;
+  height: 60px;
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.fancybox-infobar {
+  display: none;
+
+
+  @media only screen and (max-width: 767px) {
+    display: block;
+  }
+}
+
+.fancybox-toolbar {
+  right: 70px;
+  top: 70px;
+
+  @media only screen and (max-width: 767px) {
+    right: 20px;
+    top: 20px;
+  }
+}
+
+.fancybox-button {
+  padding: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
+  border-radius: 10px;
+  
+
+  &:hover {
+    background: $blue;
+  }
+
+  >div {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.fancybox-button--arrow_right {
+ right: 100px !important;
+
+ @media only screen and (max-width: 767px) {
+  right: 20px !important;
+  display: none;
+ }
+}
+
+.fancybox-button--arrow_left {
+  left: 100px !important;
+
+  @media only screen and (max-width: 767px) {
+    left: 20px !important;
+    display: none;
+  }
+}

@@ -186,16 +186,7 @@
   }
 
   &__title {
-    font-size: 30px;
     margin-top: 10px;
-
-    @media only screen and (max-width: 991px) {
-      font-size: 38px;
-    }
-
-    @media only screen and (max-width: 767px) {
-      font-size: 22px;
-    }
   }
 
   &__label {
@@ -254,11 +245,27 @@
     }
   }
 
+  &__aside {
+    margin-top: 70px;
+  }
+
+  &__more {
+    width: fit-content;
+    border-bottom: 1px solid $core-black;
+    padding-bottom: 1px;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+
+
+
+  }
+
   &__foot {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 83px;
+    margin-top: 20px;
 
     @media only screen and (max-width: 991px) {
       margin-top: 0;
@@ -313,9 +320,10 @@
   }
 
   &__head {
-    @media only screen and (max-width: 991px) {
-      position: absolute;
-      top: 0;
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 30px;
     }
   }
 
@@ -334,3 +342,5 @@
     }
   }
 }
+
+
