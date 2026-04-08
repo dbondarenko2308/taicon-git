@@ -262,13 +262,14 @@ const aboutNews = new Swiper('.showcase__container', {
 })
 
 $('.field input, .field textarea').on('input change focus blur', function() {
-	const $field = $(this).parent()
+	const $input = $(this)
+	const $field = $input.closest('.field, .field-select-custom')
 	const $label = $field.find('.field__label')
 	const $error = $field.find('.field__error')
 
-	if ($(this).val().length > 0) {
+	if ($input.val().length > 0 || $input.is(':focus')) {
 		$label.addClass('top')
-		$(this).removeClass('error')
+		$input.removeClass('error')
 		$error.hide()
 	} else {
 		$label.removeClass('top')
@@ -353,6 +354,8 @@ $(function() {
 $('.select2').select2({
 	minimumResultsForSearch: Infinity
 })
+
+$('.select2--multi').select2({})
 
 $(window).on('scroll', function() {
 	var header = $('header')
@@ -537,6 +540,68 @@ $('.library__mobile--btn').on('click', function() {
 $('.library__aside--back').on('click', function() {
 	$('.library__aside').removeClass('active')
 })
+
+// $(function() {
+// 	$('.field-select-custom').each(function() {
+// 		const $wrapper = $(this)
+// 		const $label = $wrapper.find('.field__label')
+// 		const $input = $wrapper.find('input')
+// 		const $dropdown = $wrapper.find('.field-select-custom__dropdown')
+// 		const $items = $dropdown.find('.field-select-custom__dropdown--item')
+
+// 		$wrapper
+// 			.find('label.field, .field-select-custom__arrow')
+// 			.on('click', function(e) {
+// 				e.stopPropagation()
+// 				$('.field-select-custom__dropdown').not($dropdown).slideUp(150)
+// 				$('.field-select-custom label.field')
+// 					.not($label.closest('label.field'))
+// 					.removeClass('open')
+// 				$dropdown.slideToggle(150)
+// 				$label.closest('label.field').toggleClass('open')
+// 			})
+
+// 		$items.on('click', function(e) {
+// 			e.stopPropagation()
+// 			const val = $(this).text().trim()
+// 			$input.val(val)
+// 			$items.removeClass('active')
+// 			$(this).addClass('active')
+// 			$dropdown.slideUp(150)
+// 			$label.closest('label.field').removeClass('open')
+// 			$label.addClass('top')
+// 		})
+
+// 		$input.on('input', function() {
+// 			const query = $(this).val().toLowerCase()
+// 			$items.each(function() {
+// 				const text = $(this).text().toLowerCase()
+// 				$(this).toggle(text.indexOf(query) !== -1)
+// 			})
+
+// 			if ($(this).val().length > 0) {
+// 				$label.addClass('top')
+// 			} else {
+// 				$label.removeClass('top')
+// 			}
+
+// 			const anyVisible = $items.filter(':visible').length > 0
+// 			if (anyVisible) $dropdown.slideDown(150)
+// 		})
+
+// 		$input.on('focus', function() {
+// 			$label.addClass('top')
+// 		})
+// 		$input.on('blur', function() {
+// 			if ($input.val().length === 0) $label.removeClass('top')
+// 		})
+// 	})
+
+// 	$(document).on('click', function() {
+// 		$('.field-select-custom__dropdown').slideUp(150)
+// 		$('.field-select-custom label.field').removeClass('open')
+// 	})
+// })
 
 $('.material__tabs a').on('click', function(e) {
 	e.preventDefault()

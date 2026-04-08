@@ -14,7 +14,6 @@
 
     @media only screen and (max-width: 991px) {
       display: block;
-      padding-top: 100px;
       position: relative;
     }
   }
@@ -204,7 +203,7 @@
   &__video {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 110px;
     background: url('/images/bg-video.png') no-repeat;
     background-size: cover;
     cursor: pointer;
@@ -247,6 +246,24 @@
 
   &__aside {
     margin-top: 70px;
+
+    @media only screen and (max-width: 991px) {
+      margin-top: 50px;
+      gap: 20px;
+
+      &.block-video {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @media only screen and (max-width: 767px) {
+          grid-template-columns: 1fr;
+        }
+
+        .detal__foot {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
   }
 
   &__more {
@@ -256,9 +273,8 @@
     font-weight: 700;
     font-size: 15px;
     text-transform: uppercase;
-
-
-
+    margin: 30px 0;
+    margin-bottom: 0;
   }
 
   &__foot {
@@ -270,11 +286,11 @@
     @media only screen and (max-width: 991px) {
       margin-top: 0;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 
     @media only screen and (max-width: 767px) {
-      margin-top: -20px;
+      grid-template-columns: 1fr;
     }
   }
 
@@ -330,17 +346,5 @@
   &__content {
     display: flex;
     flex-direction: column;
-
-    @media only screen and (max-width: 991px) {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 50px 20px;
-      display: grid;
-    }
-
-    @media only screen and (max-width: 767px) {
-      grid-template-columns: 1fr;
-    }
   }
 }
-
-
