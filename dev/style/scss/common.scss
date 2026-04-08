@@ -1304,3 +1304,19 @@ h1 {
     display: none;
   }
 }
+
+
+.catalog__desc {
+  margin-top: -20px;
+  margin-bottom: 50px;
+  max-width: 756px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 146%;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 13px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+  }
+}
