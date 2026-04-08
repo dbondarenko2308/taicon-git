@@ -1,0 +1,65 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.detal-vid {
+  margin-top: 140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 80px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background: $core-black;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
+
+    @media only screen and (max-width: 767px) {
+      width: 46px;
+      height: 46px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &:hover {
+      background: $blue;
+    }
+  }
+
+  &__video {
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 16px;
+
+    video {
+      width: 100%;
+      border-radius: 50px;
+      height: 100%;
+
+      @media only screen and (max-width: 767px) {
+        border-radius: 20px;
+      }
+    }
+  }
+}

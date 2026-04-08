@@ -1,0 +1,140 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.detal-func {
+  &__title {
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 991px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 10px;
+
+    overflow: auto;
+
+    &::-webkit-scrollbar { 
+      display: none;
+    }
+
+
+    @media only screen and (max-width: 767px) {
+      margin-right: -20px;
+      padding-right: 20px;
+    }
+
+    span {
+      padding: 14px 30px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 157%;
+      text-transform: uppercase;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: 300ms;
+
+      @media only screen and (max-width: 991px) {
+        padding: 10px 20px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      @media only screen and (max-width: 767px) {
+        font-size: 12px;
+      }
+
+      &:hover {
+        background: $blue;
+        color: #fff;
+      }
+
+      &.active {
+        background: $blue;
+        color: #fff;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 138%;
+    text-transform: uppercase;
+    color: $demin-blue;
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 22px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__grids {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 50px 20px;
+
+    @media only screen and (max-width: 1300px) {
+      
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 991px) {
+     grid-template-columns: 1fr 1fr; 
+    }
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    background: $blue;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 144%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 15px;
+    }
+  }
+
+  &__text {
+    line-height: 147%;
+    font-size: 15px;
+    font-weight: 500;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  &__items {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}

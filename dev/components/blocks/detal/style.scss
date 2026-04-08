@@ -1,0 +1,336 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.detal {
+  margin-bottom: 140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 80px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 991px) {
+      display: block;
+      padding-top: 100px;
+      position: relative;
+    }
+  }
+
+  &__slider {
+    max-width: 670px;
+    position: relative;
+    margin-right: 50px;
+    flex-shrink: 0;
+    width: 100%;
+
+    @media only screen and (max-width: 1300px) {
+      max-width: 500px;
+      margin-right: 20px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      max-width: 100%;
+    }
+
+    .swiper-pagination {
+      display: none;
+
+      @media only screen and (max-width: 991px) {
+        display: block;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__loop {
+    position: absolute;
+    background: $core-black;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 12px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 300ms;
+
+    @media only screen and (max-width: 767px) {
+      right: 20px;
+      bottom: 20px;
+    }
+
+    &:hover {
+      background: $blue;
+    }
+  }
+
+  &__top {
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 991px) {
+      padding-bottom: 30px;
+    }
+
+    &--item {
+      display: flex;
+      align-items: center;
+      height: 504px;
+      border-radius: 20px;
+      overflow: hidden;
+
+      @media only screen and (max-width: 991px) {
+        height: auto;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__container {
+    @media only screen and (max-width: 991px) {
+      display: none;
+    }
+    &--item {
+      display: flex;
+      align-items: center;
+
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &.swiper-slide-thumb-active {
+        border: 2px solid $blue;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    z-index: 11;
+    width: calc(100% - 56px);
+    left: 28px;
+
+    @media only screen and (max-width: 991px) {
+      display: none;
+    }
+
+    .swiper-button__prev,
+    .swiper-button__next {
+      width: 50px;
+      height: 50px;
+      background: $core-black;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background: $blue;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 30px 0;
+
+    .catalog-item__list--item {
+      margin-bottom: 0;
+    }
+
+    .catalog-item__list--icon {
+      width: 48px;
+      height: 48px;
+
+      @media only screen and (max-width: 767px) {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    @media only screen and (max-width: 991px) {
+      margin: 0;
+
+      grid-column: span 2;
+    }
+
+    @media only screen and (max-width: 767px) {
+      grid-column: span 1;
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    margin-top: 10px;
+
+    @media only screen and (max-width: 991px) {
+      font-size: 38px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      font-size: 22px;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 147%;
+    text-transform: uppercase;
+    color: $blue;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  &__video {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background: url('/images/bg-video.png') no-repeat;
+    background-size: cover;
+    cursor: pointer;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    @media only screen and (max-width: 767px) {
+      height: 72px;
+    }
+
+    &--arrow {
+      width: 226px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media only screen and (max-width: 767px) {
+        width: 160px;
+        flex-shrink: 0;
+      }
+    }
+
+    &--text {
+      padding-left: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 157%;
+      text-transform: uppercase;
+
+      @media only screen and (max-width: 991px) {
+        font-size: 13px;
+      }
+
+      @media only screen and (max-width: 767px) {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  &__foot {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 83px;
+
+    @media only screen and (max-width: 991px) {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media only screen and (max-width: 767px) {
+      margin-top: -20px;
+    }
+  }
+
+  &__btn {
+    @media only screen and (max-width: 991px) {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    padding: 30px;
+    background: $light-blue;
+    border-radius: 20px;
+
+    @media only screen and (max-width: 767px) {
+      padding: 20px;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 144%;
+      text-transform: uppercase;
+      color: $demin-blue;
+      display: block;
+      margin-bottom: 30px;
+
+      @media only screen and (max-width: 767px) {
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 147%;
+
+      @media only screen and (max-width: 767px) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__head {
+    @media only screen and (max-width: 991px) {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 50px 20px;
+      display: grid;
+    }
+
+    @media only screen and (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,4 +1,87 @@
 $(function() {
+	var sliderThumbnail = new Swiper('.detal__container', {
+		slidesPerView: 5,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		spaceBetween: 10
+	})
+
+	var slider = new Swiper('.detal__top', {
+		thumbs: {
+			swiper: sliderThumbnail
+		},
+
+		pagination: {
+			clickable: true,
+			el: '.swiper-pagination'
+		},
+
+		navigation: {
+			prevEl: '.swiper-button__prev',
+			nextEl: '.swiper-button__next'
+		}
+	})
+
+	$('[data-func-tab]').on('click', function() {
+		if (!$(this).hasClass('active')) {
+			var index = $(this).index()
+			$(this).addClass('active').siblings().removeClass('active')
+			$('[data-func-item]').removeClass('active').eq(index).addClass('active')
+		}
+		return false
+	})
+
+	$(function() {
+		$('.detal-vid__play').on('click', function() {
+			const $wrap = $(this).closest('.detal-vid__video')
+			const video = $wrap.find('video').get(0)
+
+			video.play()
+			$(this).fadeOut()
+
+			setTimeout(() => {
+				$(video).attr('controls', true)
+			}, 500)
+		})
+	})
+
+	const detalSlider = new Swiper('.detal-slider__slider', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+
+		navigation: {
+			prevEl: '.swiper-button__prev',
+			nextEl: '.swiper-button__next'
+		},
+
+		breakpoints: {
+			991: {
+				slidesPerView: 1.625,
+				loop: true
+			}
+		}
+	})
+
+	$('.detal__video--arrow, .detal__video--text').on('click', function() {
+		$(this).closest('.detal__video').find('[data-fancybox]').trigger('click')
+	})
+
+	$('.detal-links a').on('click', function(e) {
+		e.preventDefault()
+
+		const index = $(this).index()
+		const target = $('[data-scroll-item]').eq(index)
+
+		if (target.length) {
+			$('html, body').animate(
+				{
+					scrollTop: target.offset().top - 180
+				},
+				500
+			)
+		}
+	})
+
 	function initMenu() {
 		if (window.innerWidth > 991) {
 			$('.menu__item.dropdown').off('click').off('mouseenter mouseleave').hover(
@@ -398,7 +481,6 @@ $('.file').each(function() {
 		`)
 
 		$btn.addClass('file__btn--remove').text('УДАЛИТЬ')
-
 	}
 
 	function showError(message) {

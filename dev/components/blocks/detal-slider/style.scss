@@ -1,0 +1,155 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.detal-slider {
+  margin-top: 140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 80px;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    position: relative;
+  }
+
+  &__slider {
+    max-width: calc(100% - 200px);
+
+    @media only screen and (max-width: 1300px) {
+      max-width: calc(100% - 60px);
+    }
+
+    @media only screen and (max-width: 991px) {
+      max-width: 100%;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    z-index: 11;
+    width: 100%;
+    left: 0;
+
+    @media only screen and (max-width: 991px) {
+      position: relative;
+      top: 0;
+      transform: translate(0);
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .swiper-button__prev,
+    .swiper-button__next {
+      width: 50px;
+      height: 50px;
+      background: $core-black;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      cursor: pointer;
+
+      &.swiper-button-disabled {
+        pointer-events: none;
+        cursor: initial;
+        background: $light-blue;
+
+        &:hover {
+          background: $light-blue;
+        }
+
+        svg {
+          path {
+            fill: $blue;
+          }
+        }
+      }
+
+      &:hover {
+        background: $blue;
+      }
+    }
+  }
+
+  &__item {
+    width: 706px;
+
+    .catalog-item__grid {
+      grid-template-columns: 232px 1fr;
+
+      @media only screen and (max-width: 991px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media only screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .catalog-item__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 76px;
+
+      @media only screen and (max-width: 1300px) {
+        grid-template-columns: 1fr;
+      }
+
+      @media only screen and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .catalog-item__foot {
+      display: flex;
+      align-items: center;
+
+      @media only screen and (max-width: 1300px) {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    .catalog-item__btn {
+      width: auto;
+      margin-bottom: 0;
+
+      @media only screen and (max-width: 1300px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__gradient {
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    width: 310px;
+    height: 650px;
+    position: absolute;
+    right: 74px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    @media only screen and (max-width: 1300px) {
+      right: 20px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      display: none;
+    }
+  }
+}

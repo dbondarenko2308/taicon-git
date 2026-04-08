@@ -1,0 +1,27 @@
+@@include('components/header/template.html',{"title": 'Серия SensAIR'})
+@@include('components/elements/breadcrumbs/template.html',{
+list: ['<a href="index.html">Главная</a>',],
+'page': 'Серия SensAIR',
+'title': false,
+})
+
+
+<div class="catalog">
+  <div class="container">
+
+    @@include('components/blocks/detal/template.html',{})
+    @@include('components/blocks/detal-model/template.html',{})
+    @@include('components/blocks/detal-table/template.html',{})
+    @@include('components/blocks/detal-func/template.html',{})
+    @@include('components/blocks/detal-vid/template.html',{})
+    @@include('components/blocks/detal-doc/template.html',{})
+
+    @@include('components/blocks/detal-slider/template.html',{})
+  </div>
+</div>
+
+
+
+
+
+@@include('components/footer/template.html',{})

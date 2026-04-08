@@ -1,0 +1,135 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.detal-table {
+  margin-top: 70px;
+  margin-bottom: 140px;
+  
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 129%;
+    text-transform: uppercase;
+    color: $blue;
+    max-width: 690px;
+    margin-bottom: 50px;
+
+
+    @media only screen and (max-width: 991px) {
+      font-size: 33px;
+    }
+
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 30px;
+      font-size: 19px;
+    }
+  }
+
+  &__table {
+    margin-bottom: 50px;
+    overflow: auto;
+    padding-bottom: 20px;
+    margin-right: -20px;
+    padding-right: 20px;
+   
+
+    &::-webkit-scrollbar {
+      height: 5px;
+      background: $light-blue;
+      border-radius: 20px
+    }
+
+     &::-webkit-scrollbar-thumb {
+      background: $calm-sky;
+      border-radius: 20px;
+      height: 5px;
+     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      thead {
+        tr {
+          th {
+            padding: 15px 30px;
+            min-width: 253px;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 144%;
+            text-transform: uppercase;
+            border-bottom: 1px solid $calm-sky;
+            border-left: 1px solid $calm-sky;
+
+
+            @media only screen and (max-width: 767px) {
+              min-width: 200px;
+              font-size: 15px;
+              padding: 10px 20px;
+            }
+          }
+
+          th:first-child {
+            min-width: 346px;
+            text-align: left;
+            padding-left: 0;
+            font-weight: 500;
+            font-size: 15px;
+            text-transform: initial;
+            border-left: 0;
+
+            @media only screen and (max-width: 767px) {
+              min-width: 280px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            border-bottom: 1px solid $calm-sky;
+            border-left: 1px solid $calm-sky;
+
+            @media only screen and (max-width: 767px) {
+              font-size: 13px;
+              padding: 10px 20px;
+            }
+
+            &:first-child {
+              padding-left: 0;
+              text-align: left;
+              border-left: 0;
+            }
+
+            .btn {
+              width: 100%;
+            }
+
+            strong {
+              font-weight: 700;
+              font-size: 26px;
+              line-height: 138%;
+              text-transform: uppercase;
+
+              @media only screen and (max-width: 767px) {
+                font-size: 17px;
+              }
+              
+            }
+          }
+        }
+      }
+    }
+  }
+}
