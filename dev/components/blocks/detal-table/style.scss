@@ -3,7 +3,6 @@
 .detal-table {
   margin-top: 70px;
   margin-bottom: 140px;
-  
 
   @media only screen and (max-width: 767px) {
     margin-top: 40px;
@@ -19,11 +18,9 @@
     max-width: 690px;
     margin-bottom: 50px;
 
-
     @media only screen and (max-width: 991px) {
       font-size: 33px;
     }
-
 
     @media only screen and (max-width: 767px) {
       margin-bottom: 30px;
@@ -37,19 +34,27 @@
     padding-bottom: 20px;
     margin-right: -20px;
     padding-right: 20px;
-   
+
+    scrollbar-width: thin;
+    scrollbar-color: $calm-sky $light-blue;
 
     &::-webkit-scrollbar {
       height: 5px;
       background: $light-blue;
-      border-radius: 20px
     }
 
-     &::-webkit-scrollbar-thumb {
+    &::-webkit-scrollbar-thumb {
       background: $calm-sky;
       border-radius: 20px;
-      height: 5px;
-     }
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+   
 
     table {
       width: 100%;
@@ -65,7 +70,6 @@
             text-transform: uppercase;
             border-bottom: 1px solid $calm-sky;
             border-left: 1px solid $calm-sky;
-
 
             @media only screen and (max-width: 767px) {
               min-width: 200px;
@@ -125,7 +129,6 @@
               @media only screen and (max-width: 767px) {
                 font-size: 17px;
               }
-              
             }
           }
         }
