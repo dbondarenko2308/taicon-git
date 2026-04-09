@@ -139,3 +139,11 @@
     }
   }
 }
+
+.catalog-more {
+  margin-top: 140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 80px;
+  }
+}
