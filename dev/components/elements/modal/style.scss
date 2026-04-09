@@ -3,6 +3,7 @@
   height: 100%;
   display: none;
   padding: 0;
+  background: transparent;
 
   &-thanks {
     background: transparent;
@@ -12,16 +13,63 @@
     }
   }
 
+  .fancybox-button {
+    display: none;
+  }
+
+  &-detal {
+    .modal__inner {
+      background: transparent;
+      max-width: 1360px;
+      width: 100%;
+      padding: 0;
+
+      @media only screen and (max-width: 767px) {
+        position: relative;
+        top: 0;
+        transform: translate(0);
+        left: 0;
+        padding: 84px 20px 20px;
+      }
+
+      .feedback {
+        width: 100%;
+      }
+
+      .feedback__inner {
+        width: 100%;
+      }
+
+      .form-content {
+        max-width: 1090px;
+      }
+
+      .form-content__title {
+        margin-bottom: 50px;
+
+        @media only screen and (max-width: 767px) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
   &__close {
     position: absolute;
     right: 40px;
     top: 40px;
     cursor: pointer;
+    z-index: 10;
 
     @media only screen and (max-width: 991px) {
       right: 20px;
       width: 24px;
       height: 24px;
+      
+      svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 

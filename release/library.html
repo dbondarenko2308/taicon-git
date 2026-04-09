@@ -1698,6 +1698,168 @@
   </div>
 </div>
 
+<div class="modal modal-detal" id="modal-detal">
+  <div class="modal__close" data-fancybox-close>
+    <svg
+      width="36"
+      height="36"
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M28.0607 7.93934C28.6464 8.52513 28.6464 9.47487 28.0607 10.0607L10.0607 28.0607C9.47487 28.6464 8.52513 28.6464 7.93934 28.0607C7.35355 27.4749 7.35355 26.5251 7.93934 25.9393L25.9393 7.93934C26.5251 7.35355 27.4749 7.35355 28.0607 7.93934Z"
+        fill="white"
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M7.93934 7.93934C8.52513 7.35355 9.47487 7.35355 10.0607 7.93934L28.0607 25.9393C28.6464 26.5251 28.6464 27.4749 28.0607 28.0607C27.4749 28.6464 26.5251 28.6464 25.9393 28.0607L7.93934 10.0607C7.35355 9.47487 7.35355 8.52513 7.93934 7.93934Z"
+        fill="white"
+      />
+    </svg>
+  </div>
+
+  <div class="modal__inner">
+    <div class="feedback">
+      <div class="feedback__inner">
+        <div class="feedback__img">
+          <img src="images/feedback.png" alt="" />
+        </div>
+        <form action="#">
+          <div class="form-content">
+            <h3 class="form-content__title title">
+              Запросить оптовый прайс 
+            </h3>
+
+            <div class="form-content__top">
+              <div class="form-content__label">Выбор страны*</div>
+              <div
+                class="form-content__radios field--error"
+                data-field="COUNTRY"
+              >
+                <label class="radio">
+                  <span class="radio__inner">
+                    <input
+                      type="radio"
+                      data-country
+                      data-resident="true"
+                      name="choose"
+                    />
+                    <span></span>
+                  </span>
+                  <span class="radio__text">Резидент РФ</span>
+                </label>
+                <label class="radio">
+                  <span class="radio__inner">
+                    <input
+                      type="radio"
+                      name="choose"
+                      data-resident="false"
+                      data-country
+                    />
+                    <span></span>
+                  </span>
+                  <span class="radio__text">Не резидент РФ</span>
+                </label>
+              </div>
+
+              <div class="form-content__info">
+                <label class="field field-select" data-field="REGION">
+                  <select class="select2">
+                    <option value="" disabled selected hidden>Регион*</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                    <option value="AL">Белгородская область</option>
+                    <option value="AL">Брянская область</option>
+                  </select>
+
+                  <div class="field-error-text">Обязательное поле*</div>
+                </label>
+
+                <label class="field field--error">
+                  <input type="text" />
+                  <span class="field__label">Название компании*</span>
+
+                  <div class="field-error-text">Обязательное поле*</div>
+                </label>
+                <label class="field">
+                  <input type="number" />
+                  <span class="field__label">ИНН*</span>
+                </label>
+                <label class="field">
+                  <input type="text" />
+                  <span class="field__label">ФИО*</span>
+                </label>
+                <label class="field">
+                  <input type="text" />
+                  <span class="field__label">Email*</span>
+                </label>
+                <div class="form-group">
+                  <input
+                    id="phone"
+                    type="tel"
+                    name="leyka_donor_phone"
+                    class="form-control tel"
+                    inputmode="tel"
+                    value=""
+                  />
+                </div>
+              </div>
+
+              <div class="form-content__bot">
+                <div class="captcha captcha-right field--error">
+                  <img src="images/captcha.png" alt="" />
+                </div>
+                <div class="form-content__foot">
+                  <label class="checkbox">
+                    <span class="checkbox__inner">
+                      <input type="checkbox" checked />
+                      <span></span>
+                    </span>
+                    <span class="checkbox__text"
+                      >Нажимая кнопку, я принимаю
+                      <a href="#">условия соглашения</a>
+                    </span>
+                  </label>
+
+                  <a
+                    href="#thanks"
+                    data-fancybox
+                    class="form-content__btn btn btn-dark"
+                  >
+                    Отправить
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <div class="cookies">
