@@ -12,8 +12,8 @@
 
   background: $calm-sky;
 
-  @media only screen and (max-width: 991px) {
-    margin-top: 70px;
+  @media only screen and (max-width: 767px) {
+    margin-top: 80px;
   }
 
   &__inner {

@@ -1,5 +1,10 @@
 @use '../../../style/scss/variables.scss' as *;
 .brands-name {
+  margin-top: 140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 80px;
+  }
   &__items {
     display: grid;
     grid-template-columns: 1fr 1fr;

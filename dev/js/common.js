@@ -107,6 +107,41 @@ $(function() {
 	$(window).on('resize', initMenu)
 })
 
+let $searchTop = $('.search__top')
+let $inputTop = $searchTop.find('input')
+let $removeTop = $searchTop.find('.header__search--remove')
+
+$inputTop.on('focus', function() {
+	$searchTop.addClass('active')
+})
+
+$(document).on('click', function(e) {
+	if ($(e.target).closest('.header__search').length === 0) {
+		$searchTop.removeClass('active')
+	}
+})
+
+$removeTop.on('click', function() {
+	$inputTop.val('').blur()
+	$removeTop.removeClass('visible')
+	$searchTop.removeClass('active')
+})
+
+$(document).on('keydown', function(e) {
+	if (e.key === 'Escape') {
+		$searchTop.removeClass('active')
+		$inputTop.blur()
+	}
+})
+
+$inputTop.on('input', function() {
+	if ($(this).val().length > 0) {
+		$removeTop.addClass('visible')
+	} else {
+		$removeTop.removeClass('visible')
+	}
+})
+
 $('.header-catalog').each(function() {
 	let $wrap = $(this)
 
@@ -541,68 +576,85 @@ $('.library__aside--back').on('click', function() {
 	$('.library__aside').removeClass('active')
 })
 
-// $(function() {
-// 	$('.field-select-custom').each(function() {
-// 		const $wrapper = $(this)
-// 		const $label = $wrapper.find('.field__label')
-// 		const $input = $wrapper.find('input')
-// 		const $dropdown = $wrapper.find('.field-select-custom__dropdown')
-// 		const $items = $dropdown.find('.field-select-custom__dropdown--item')
+$(function() {
+	$('.field-select-custom').each(function() {
+		const $wrapper = $(this)
+		const $label = $wrapper.find('.field__label')
+		const $input = $wrapper.find('input')
+		const $dropdown = $wrapper.find('.field-select-custom__dropdown')
+		const $items = $dropdown.find('.field-select-custom__dropdown--item')
 
-// 		$wrapper
-// 			.find('label.field, .field-select-custom__arrow')
-// 			.on('click', function(e) {
-// 				e.stopPropagation()
-// 				$('.field-select-custom__dropdown').not($dropdown).slideUp(150)
-// 				$('.field-select-custom label.field')
-// 					.not($label.closest('label.field'))
-// 					.removeClass('open')
-// 				$dropdown.slideToggle(150)
-// 				$label.closest('label.field').toggleClass('open')
-// 			})
+		const $empty = $(
+			'<div class="field-select-custom__empty">Нет городов</div>'
+		).hide()
+		$dropdown.append($empty)
 
-// 		$items.on('click', function(e) {
-// 			e.stopPropagation()
-// 			const val = $(this).text().trim()
-// 			$input.val(val)
-// 			$items.removeClass('active')
-// 			$(this).addClass('active')
-// 			$dropdown.slideUp(150)
-// 			$label.closest('label.field').removeClass('open')
-// 			$label.addClass('top')
-// 		})
+		$wrapper
+			.find('label.field, .field-select-custom__arrow')
+			.on('click', function(e) {
+				e.stopPropagation()
+				$('.field-select-custom__dropdown').not($dropdown).slideUp(150)
+				$('.field-select-custom label.field')
+					.not($label.closest('label.field'))
+					.removeClass('open')
+				$dropdown.slideToggle(150)
+				$label.closest('label.field').toggleClass('open')
+			})
 
-// 		$input.on('input', function() {
-// 			const query = $(this).val().toLowerCase()
-// 			$items.each(function() {
-// 				const text = $(this).text().toLowerCase()
-// 				$(this).toggle(text.indexOf(query) !== -1)
-// 			})
+		$items.on('click', function(e) {
+			e.stopPropagation()
+			const val = $(this).text().trim()
+			$input.val(val)
+			$items.removeClass('active')
+			$(this).addClass('active')
+			$dropdown.slideUp(150)
+			$label.closest('label.field').removeClass('open')
+			$label.addClass('top')
+		})
 
-// 			if ($(this).val().length > 0) {
-// 				$label.addClass('top')
-// 			} else {
-// 				$label.removeClass('top')
-// 			}
+		$input.on('input', function() {
+			const query = $(this).val().toLowerCase()
+			let visibleCount = 0
 
-// 			const anyVisible = $items.filter(':visible').length > 0
-// 			if (anyVisible) $dropdown.slideDown(150)
-// 		})
+			$items.each(function() {
+				const text = $(this).text().toLowerCase()
+				const isMatch = text.indexOf(query) !== -1
+				$(this).toggle(isMatch)
 
-// 		$input.on('focus', function() {
-// 			$label.addClass('top')
-// 		})
-// 		$input.on('blur', function() {
-// 			if ($input.val().length === 0) $label.removeClass('top')
-// 		})
-// 	})
+				if (isMatch) visibleCount++
+			})
 
-// 	$(document).on('click', function() {
-// 		$('.field-select-custom__dropdown').slideUp(150)
-// 		$('.field-select-custom label.field').removeClass('open')
-// 	})
-// })
+			if (visibleCount === 0 && query.length > 0) {
+				$empty.show()
+			} else {
+				$empty.hide()
+			}
 
+			if ($(this).val().length > 0) {
+				$label.addClass('top')
+			} else {
+				$label.removeClass('top')
+			}
+
+			if (query.length > 0) {
+				$dropdown.slideDown(150)
+			}
+		})
+
+		$input.on('focus', function() {
+			$label.addClass('top')
+		})
+
+		$input.on('blur', function() {
+			if ($input.val().length === 0) $label.removeClass('top')
+		})
+	})
+
+	$(document).on('click', function() {
+		$('.field-select-custom__dropdown').slideUp(150)
+		$('.field-select-custom label.field').removeClass('open')
+	})
+})
 $('.material__tabs a').on('click', function(e) {
 	e.preventDefault()
 
@@ -617,4 +669,30 @@ $('.material__tabs a').on('click', function(e) {
 			500
 		)
 	}
+})
+
+$('.search__head a').on('click', function() {
+	if (!$(this).hasClass('active')) {
+		var index = $(this).index()
+		$(this).addClass('active').siblings().removeClass('active')
+		$('[data-search-info]').removeClass('active').eq(index).addClass('active')
+	}
+	return false
+})
+
+$('[data-tab-buy]').on('click', function() {
+	if (!$(this).hasClass('active')) {
+		var index = $(this).index()
+		$(this).addClass('active').siblings().removeClass('active')
+		$('[data-list-item]').removeClass('active').eq(index).addClass('active')
+	}
+	return false
+})
+
+$('.buy__mobile--filter').on('click', function() {
+	$('.buy-filter').toggleClass('active')
+})
+
+$('.buy-filter__back').on('click', function() {
+	$('.buy-filter').removeClass('active')
 })

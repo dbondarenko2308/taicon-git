@@ -1,0 +1,18 @@
+@@include('components/header/template.html',{"title": 'Новости'})
+@@include('components/elements/breadcrumbs/template.html',{
+list: ['<a href="index.html">Главная</a>'],
+'page': 'Новости',
+'title': true,
+})
+
+ @@include('components/blocks/news/template.html',{})
+
+
+ @@include('components/blocks/feedback/template-news.html',{})
+
+
+
+
+
+
+@@include('components/footer/template.html',{})

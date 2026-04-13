@@ -1,6 +1,13 @@
 @use '../../../style/scss/variables.scss' as *;
 
 .serv-gar {
+  margin-top: 140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 80px;
+  }
+
+  
   &__title {
     margin-bottom: 50px;
 

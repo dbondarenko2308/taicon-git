@@ -1,0 +1,146 @@
+.tech-det {
+  background: linear-gradient(0deg, #fff 0%, #7ea5ba 100%);
+  margin-top: 140px;
+  position: relative;
+  padding-bottom: 140px;
+  padding-top: 70px;
+  margin-bottom: -140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 80px;
+    padding-top: 40px;
+    margin-bottom: -80px;
+    padding-bottom: 80px;
+  }
+
+  &__pal {
+    position: absolute;
+    display: block;
+
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 1300px) {
+      max-width: 400px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      max-width: 100%;
+      height: 311px;
+      top: 380px;
+      right: -129px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      height: 161px;
+      right: -91px;
+      top: 32%;
+    }
+  }
+
+  &__hand {
+    bottom: 208px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 0;
+
+    @media only screen and (max-width: 1300px) {
+      max-width: 400px;
+      bottom: 350px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      max-width: 100%;
+      height: 342px;
+      bottom: auto;
+      top: 660px;
+      left: -102px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      height: 153px;
+      left: -17px;
+      top: 44%;
+    }
+  }
+
+  &__aside {
+    max-width: 749px;
+    margin-bottom: 90px;
+
+    @media only screen and (max-width: 1300px) {
+      max-width: 600px;
+    }
+
+
+    @media only screen and (max-width: 991px) {
+      margin-bottom: 540px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 374px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    max-width: 556px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 147%;
+
+    @media only screen and (max-width: 991px) {
+      max-width: 467px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  &__info {
+    max-width: 638px;
+    margin-left: auto;
+
+
+    @media only screen and (max-width: 1300px) {
+      max-width: 500px;
+    }
+
+    @media only screen and (max-width: 991px) {
+      max-width: 541px;
+      margin: 0;
+    }
+
+    .tech-det__text {
+      max-width: 495px;
+    }
+  }
+
+  &__label {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 138%;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 15px;
+    }
+  }
+
+  &__btn {
+    margin-top: 50px;
+  }
+}

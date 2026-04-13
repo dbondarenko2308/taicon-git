@@ -1,0 +1,161 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.news {
+  margin-bottom: 140px;
+
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 80px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+
+    @media only screen and (max-width: 991px) {
+      display: block;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media only screen and (max-width: 991px) {
+      overflow: auto;
+      margin-bottom: 50px;
+      margin-right: -20px;
+      padding-right: 20px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__tab {
+    padding: 14px 30px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 157%;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 16px;
+
+    @media only screen and (max-width: 767px) {
+      white-space: nowrap;
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+
+    &.active {
+      background: $blue;
+      color: #fff;
+    }
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    max-height: 250px;
+    width: 100%;
+    min-height: 250px;
+
+    @media only screen and (max-width: 991px) {
+      max-height: initial;
+
+      min-height: initial;
+    }
+
+    @media only screen and (max-width: 767px) {
+      height: 320px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__soc {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+ 
+
+    &--label {
+      max-width: 168px;
+
+      @media only screen and (max-width: 767px) {
+        max-width: 145px;
+        gap: 15px;
+        font-size: 13px;
+      }
+    }
+
+    .footer__soc {
+      margin-top: 0;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+    @media only screen and (max-width: 991px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    border-radius: 20px;
+    overflow: hidden;
+    background: $light-blue;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 10;
+
+    @media only screen and (max-width: 767px) {
+      padding: 20px;
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: 15px;
+    color: $blue;
+    margin-bottom: 10px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  &__text {
+    flex-grow: 10;
+    margin-bottom: 30px;
+    font-weight: 700;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  &__date {
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+}

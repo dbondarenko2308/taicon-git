@@ -186,6 +186,13 @@ ul {
   &-dark {
     background: $core-black;
 
+    &:disabled {
+      background: $light-blue;
+      color: $blue;
+      pointer-events: none;
+      cursor: initial;
+    }
+
     &:hover {
       color: #fff;
       background: $blue;
@@ -199,6 +206,13 @@ ul {
   &-light {
     background: $blue;
     color: #fff;
+
+    &:disabled {
+      background: $light-blue;
+      color: $blue;
+      pointer-events: none;
+      cursor: initial;
+    }
 
     &:hover {
       background: $demin-blue;
@@ -329,10 +343,10 @@ ul {
 }
 
 section {
-  margin: 140px 0;
+  margin-top: 140px;
 
   @media only screen and (max-width: 991px) {
-    margin: 80px 0;
+    margin-top: 80px;
   }
 }
 
@@ -1199,14 +1213,12 @@ h1 {
   overflow: hidden;
 }
 
-
 .catalog {
   margin-top: -100px;
   padding-top: 100px;
   margin-bottom: -140px;
 
   padding-bottom: 140px;
-
 
   @media only screen and (max-width: 991px) {
     margin-bottom: -80px;
@@ -1229,7 +1241,6 @@ h1 {
   display: none !important;
 }
 
-
 .fancybox-button--close {
   background: none;
   width: 60px;
@@ -1243,7 +1254,6 @@ h1 {
 
 .fancybox-infobar {
   display: none;
-
 
   @media only screen and (max-width: 767px) {
     display: block;
@@ -1269,13 +1279,12 @@ h1 {
   justify-content: center;
   transition: 300ms;
   border-radius: 10px;
-  
 
   &:hover {
     background: $blue;
   }
 
-  >div {
+  > div {
     display: flex;
     align-items: center;
     padding: 0;
@@ -1288,12 +1297,12 @@ h1 {
 }
 
 .fancybox-button--arrow_right {
- right: 100px !important;
+  right: 100px !important;
 
- @media only screen and (max-width: 767px) {
-  right: 20px !important;
-  display: none;
- }
+  @media only screen and (max-width: 767px) {
+    right: 20px !important;
+    display: none;
+  }
 }
 
 .fancybox-button--arrow_left {
@@ -1304,7 +1313,6 @@ h1 {
     display: none;
   }
 }
-
 
 .catalog__desc {
   margin-top: -20px;
@@ -1318,5 +1326,82 @@ h1 {
     font-size: 13px;
     margin-top: -15px;
     margin-bottom: 30px;
+  }
+}
+
+.field-custom-select2 {
+  position: relative;
+}
+
+.field-select-custom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+
+  border-radius: 10px;
+  position: relative;
+
+  .field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 767px) {
+      height: 48px;
+
+      input {
+        height: 48px;
+      }
+    }
+
+    &.open {
+      .field-select-custom__arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  input {
+    border: 1px solid #c4d3dd;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    transition: 300ms;
+  }
+
+  &__empty {
+    padding: 20px;
+  }
+
+  &__dropdown {
+    display: none;
+    border-radius: 10px;
+    border: 1px solid #c4d3dd;
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    top: 110%;
+    z-index: 1001;
+
+    &--item {
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 15px;
+      cursor: pointer;
+
+      &:hover {
+        color: $blue;
+      }
+
+      &.active {
+        color: $blue;
+      }
+    }
   }
 }
