@@ -1,0 +1,141 @@
+@use '../../../style/scss/variables.scss' as *;
+
+.tech-banner {
+  height: 570px;
+  background: url('/images/bg-life.png') 40% 30% no-repeat;
+  background-size: cover;
+  margin-top: -100px;
+  position: relative;
+  margin-bottom: 140px;
+  overflow: hidden;
+
+  &-pro {
+    margin-bottom: 0;
+    background: $core-black;
+
+    .container {
+      height: 100%;
+    }
+
+    .tech-banner {
+      &__img {
+        @media only screen and (max-width: 991px) {
+          width: calc(100% + 40px);
+          height: 100%;
+          right: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        @media only screen and (max-width: 767px) {
+          width: 633px;
+          left: 30%;
+          transform: translateX(-50%);
+        }
+      }
+
+      &__inner {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding-top: 0;
+
+        @media only screen and (max-width: 991px) {
+          display: block;
+          height: auto;
+        }
+      }
+
+      &__title {
+        color: #fff;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    height: auto;
+  }
+
+  @media only screen and (max-width: 767px) {
+    margin-top: -59px;
+    margin-bottom: 80px;
+  }
+
+  &__inner {
+    padding-top: 137px;
+
+    @media only screen and (max-width: 991px) {
+      padding-bottom: 70px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      padding-top: 50px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @media only screen and (max-width: 1300px) {
+      height: 600px;
+      right: -10%;
+    }
+
+    @media only screen and (max-width: 991px) {
+      position: relative;
+      top: 0;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    @media only screen and (max-width: 400px) {
+      width: 441px;
+      height: 368px;
+      margin: 0 auto;
+      right: 0;
+      left: -25%;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    max-width: 440px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 767px) {
+      height: 43px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 15px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+}
